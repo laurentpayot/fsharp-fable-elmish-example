@@ -1,0 +1,31 @@
+{
+  "name": "fsharp-counter-web-app",
+  "version": "0.0.1",
+  "description": "F# counter web app",
+  "main": "Program.fs.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurentpayot/Fsharp-counter-web-app.git"
+  },
+  "keywords": [
+    "F#",
+    "counter",
+    "vite",
+    "Fable",
+    "Elmish"
+  ],
+  "author": "Laurent Payot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laurentpayot/Fsharp-counter-web-app/issues"
+  },
+  "homepage": "https://github.com/laurentpayot/Fsharp-counter-web-app#readme",
+  "type": "module",
+  "scripts": {
+    "test": "pnpm test",
+    "start": "dotnet fable watch --run pnpm vite"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9"
+  }
+}
