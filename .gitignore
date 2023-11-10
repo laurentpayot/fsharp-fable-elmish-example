@@ -4,3 +4,4 @@ fable_modules
 node_modules
 obj
 femto
+dist

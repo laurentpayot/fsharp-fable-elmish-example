@@ -23,7 +23,8 @@
   "type": "module",
   "scripts": {
     "test": "pnpm test",
-    "start": "dotnet fable watch --run pnpm vite"
+    "start": "dotnet fable watch --run pnpm vite",
+    "build": "dotnet fable --run pnpm vite build"
   },
   "devDependencies": {
     "vite": "^4.5.0"
