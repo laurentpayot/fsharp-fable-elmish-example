@@ -22,6 +22,7 @@
   "homepage": "https://github.com/laurentpayot/Fsharp-counter-web-app#readme",
   "type": "module",
   "scripts": {
+    "postinstall": "femto/femto",
     "test": "pnpm test",
     "start": "dotnet fable watch --run pnpm vite",
     "build": "dotnet fable --run pnpm vite build"
