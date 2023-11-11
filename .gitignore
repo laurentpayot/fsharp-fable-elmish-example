@@ -1,7 +1,6 @@
-.fake
 bin
-fable_modules
 node_modules
 obj
 femto
+output
 dist

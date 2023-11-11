@@ -2,7 +2,6 @@
   "name": "fsharp-counter-web-app",
   "version": "0.0.1",
   "description": "F# counter web app",
-  "main": "Program.fs.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/laurentpayot/Fsharp-counter-web-app.git"
@@ -10,7 +9,7 @@
   "keywords": [
     "F#",
     "counter",
-    "vite",
+    "Vite",
     "Fable",
     "Elmish"
   ],
@@ -24,10 +23,14 @@
   "scripts": {
     "postinstall": "femto/femto",
     "test": "pnpm test",
-    "start": "dotnet fable watch --run pnpm vite",
-    "build": "dotnet fable --run pnpm vite build"
+    "cp-index": "mkdir -p output/src && cp src/index.html output/src/",
+    "start": "pnpm cp-index && dotnet fable watch --outDir output --sourceMaps --run pnpm vite",
+    "build": "pnpm cp-index && dotnet fable --outDir output --run pnpm vite build",
+    "serve": "cd dist && python3 -m http.server 5000",
+    "do-update": "pnpm update --recursive --latest"
   },
   "devDependencies": {
+    "terser": "^5.24.0",
     "vite": "^4.5.0"
   }
 }
