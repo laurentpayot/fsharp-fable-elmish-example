@@ -5,11 +5,16 @@ export default defineConfig({
     server: {
         port: 5000,
         strictPort: true,
+        watch: {
+            ignored: [
+                "**/*.fs" // Don't watch F# files
+            ],
+        },
     },
-    root: './output/src',
-    publicDir: '../../public', // relative to viteConfig.root directory
+    root: './src',
+    publicDir: '../public', // relative to viteConfig.root directory
     build: {
-        outDir: '../../dist',
+        outDir: '../dist',
         emptyOutDir: true,
         target: 'es2022', // ES2022 allowed for terser v5.16+ https://github.com/vitejs/vite/pull/12197
         minify: 'terser',

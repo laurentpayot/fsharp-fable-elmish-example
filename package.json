@@ -23,9 +23,8 @@
   "scripts": {
     "postinstall": "femto/femto",
     "test": "pnpm test",
-    "cp-index": "mkdir -p output/src && cp src/index.html output/src/",
-    "start": "pnpm cp-index && dotnet fable watch --outDir output --sourceMaps --run pnpm vite",
-    "build": "pnpm cp-index && dotnet fable --outDir output --run pnpm vite build",
+    "start": "dotnet fable watch --outDir output --sourceMaps --run pnpm vite",
+    "build": "dotnet fable --outDir output --run pnpm vite build",
     "serve": "cd dist && python3 -m http.server 5000",
     "do-update": "pnpm update --recursive --latest"
   },
