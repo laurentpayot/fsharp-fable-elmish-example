@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+        "Ionide.Ionide-fsharp",
+        "antfu.vite"
+    ]
+}

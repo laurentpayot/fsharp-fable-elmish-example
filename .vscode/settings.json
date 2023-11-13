@@ -1,6 +1,10 @@
 {
     "cSpell.words": [
         "Elmish",
-        "Femto"
-    ]
+        "Femto",
+    ],
+    "[fsharp]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "Ionide.Ionide-fsharp",
+    },
 }
