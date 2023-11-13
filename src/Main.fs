@@ -12,7 +12,7 @@ type Msg =
 
 let init () : Model = { count = 0 }
 
-let update (msg: Msg) (model: Model) =
+let update msg model =
     match msg with
     | Increment -> { model with count = model.count + 1 }
     | Decrement -> { model with count = model.count - 1 }
