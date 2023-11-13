@@ -8,5 +8,6 @@
     "[fsharp]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "Ionide.Ionide-fsharp",
+        "editor.inlayHints.enabled": "offUnlessPressed",
     },
 }
