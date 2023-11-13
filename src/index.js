@@ -1,1 +1,1 @@
-import "../output/src/App.js"
+import "../output/src/Main.js"
