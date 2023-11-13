@@ -1,4 +1,6 @@
 {
+    "vite.port": 5000,
+    "browse-lite.startUrl": "localhost:5000",
     "cSpell.words": [
         "Elmish",
         "Femto",
