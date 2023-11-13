@@ -42,5 +42,11 @@ export default defineConfig({
             mangle: true
         },
     },
-    plugins: []
+    plugins: [],
+    resolve: {
+        alias: {
+            'react': 'preact/compat',
+            'react-dom': 'preact/compat',
+        },
+    }
 })
