@@ -21,7 +21,7 @@
   "homepage": "https://github.com/laurentpayot/Fsharp-counter-web-app#readme",
   "type": "module",
   "scripts": {
-    "postinstall": "dotnet tool restore && dotnet build",
+    "postinstall": "dotnet tool restore && dotnet restore && dotnet build",
     "test": "pnpm test",
     "start": "dotnet fable watch --outDir output --sourceMaps --run pnpm vite",
     "build": "dotnet fable --outDir output --run pnpm vite build",
