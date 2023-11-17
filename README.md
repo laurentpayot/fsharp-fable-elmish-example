@@ -7,6 +7,14 @@
 - [Node.js](https://nodejs.org/) installed via pnpm with `pnpm env use --global latest`
 - run `pnpm i` to install npm dependencies as well as F# dependencies.
 
+[Ionide](https://ionide.io/) plugin for your IDE is highly recommended.
+
+## F# interactive mode
+
+```bash
+dotnet fsi
+```
+
 ## TO DO
 
 - Routing with https://elmish.github.io/browser/
