@@ -8,16 +8,16 @@
         "fable"
       ]
     },
-    "fantomas": {
-      "version": "6.2.3",
-      "commands": [
-        "fantomas"
-      ]
-    },
     "dotnet-outdated-tool": {
       "version": "4.5.3",
       "commands": [
         "dotnet-outdated"
+      ]
+    },
+    "fantomas": {
+      "version": "6.2.3",
+      "commands": [
+        "fantomas"
       ]
     }
   }
