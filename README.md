@@ -17,4 +17,6 @@ dotnet fsi
 
 ## TO DO
 
+- set indentation to 2 (Ionide + Fantomas + VSCode)
+
 - Routing with https://elmish.github.io/browser/
