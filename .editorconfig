@@ -1,4 +1,4 @@
 [*.fs]
 max_line_length = 100
-# needed for Elmish views
+# also activates fsharp_experimental_elmish
 fsharp_multiline_bracket_style = stroustrup
