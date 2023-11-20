@@ -4,37 +4,56 @@ open Elmish
 open Elmish.React
 
 
-type Model = { count: int }
+type Page =
+    | Counter of Pages.Counter.Model
+    | Time of Pages.Time.Model
+
 
 type Msg =
-    | Increment
-    | Decrement
-    | Random
+    | CounterMsg of Pages.Counter.Msg
+    | TimeMsg of Pages.Time.Msg
 
-let init () = { count = 0 }, Cmd.none
+
+type Model = { title: string; page: Page }
+
+let init () =
+    let page, cmd = Pages.Counter.init ()
+
+    {
+        title = "F# example"
+        page = Counter page
+    },
+    Cmd.map CounterMsg cmd
 
 let update msg model =
-    match msg with
-    | Increment -> { model with count = model.count + 1 }, Cmd.none
-    | Decrement -> { model with count = model.count - 1 }, Cmd.none
-    | Random ->
+    match msg, model.page with
+
+    | CounterMsg pageMsg, Counter pageModel ->
+        let newPageModel, newPageCmd = Pages.Counter.update pageMsg pageModel
+
         {
             model with
-                count = System.Random().Next(100)
+                page = Counter newPageModel
         },
-        Cmd.none
+        Cmd.map CounterMsg newPageCmd
+
+
+    | TimeMsg pageMsg, Time pageModel ->
+        let newPageModel, newPageCmd = Pages.Time.update pageMsg pageModel
+
+        { model with page = Time newPageModel }, Cmd.map TimeMsg newPageCmd
+
+    | _ -> model, Cmd.none
 
 
 let view model dispatch =
     div [] [
-        p [] [
-            button [ OnClick(fun _ -> dispatch Decrement) ] [ str "-" ]
-            str (sprintf "%A" model.count)
-            button [ OnClick(fun _ -> dispatch Increment) ] [ str "+" ]
-        ]
-        p [] [ button [ OnClick(fun _ -> dispatch Random) ] [ str "Random" ] ]
+        h1 [] [ str model.title ]
+        hr []
+        match model.page with
+        | Counter page -> Pages.Counter.view page (CounterMsg >> dispatch)
+        | Time page -> Pages.Time.view page (TimeMsg >> dispatch)
     ]
-
 
 // App
 Program.mkProgram init update view

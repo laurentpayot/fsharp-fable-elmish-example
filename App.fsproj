@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+
+    <!-- PAGES -->
+    <Compile Include="src/Pages/Counter.fs" />
+    <Compile Include="src/Pages/Time.fs" />
+
     <Compile Include="src/Main.fs" />
   </ItemGroup>
 
