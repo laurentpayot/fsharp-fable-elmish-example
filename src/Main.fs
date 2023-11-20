@@ -11,16 +11,18 @@ type Msg =
     | Decrement
     | Random
 
-let init () : Model = { count = 0 }
+let init () = { count = 0 }, Cmd.none
 
 let update msg model =
     match msg with
-    | Increment -> { model with count = model.count + 1 }
-    | Decrement -> { model with count = model.count - 1 }
-    | Random -> {
-        model with
-            count = System.Random().Next(100)
-      }
+    | Increment -> { model with count = model.count + 1 }, Cmd.none
+    | Decrement -> { model with count = model.count - 1 }, Cmd.none
+    | Random ->
+        {
+            model with
+                count = System.Random().Next(100)
+        },
+        Cmd.none
 
 
 let view model dispatch =
@@ -35,7 +37,7 @@ let view model dispatch =
 
 
 // App
-Program.mkSimple init update view
+Program.mkProgram init update view
 |> Program.withReactBatched "root"
 // |> Program.withConsoleTrace
 |> Program.run
