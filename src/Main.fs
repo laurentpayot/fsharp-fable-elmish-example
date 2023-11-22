@@ -96,8 +96,8 @@ let view model dispatch =
 
 // App
 Program.mkProgram init update view
-|> Program.toNavigable parser urlUpdate
 |> Program.withSubscription subscriptions
+|> Program.toNavigable parser urlUpdate
 |> Program.withReactBatched "root"
 // |> Program.withConsoleTrace
 |> Program.run

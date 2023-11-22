@@ -3,14 +3,17 @@
 open Fable.React
 open Fable.React.Props
 open Elmish
-open System
 
-// type JsTime = JsTime of string
+open System
+open Fable.Core
+
 
 type Model = { time: DateTime option }
+// type Model = { time: string option } //TODO JSON
 
 type Msg =
     | Refresh
+    // | GotTime of string //TODO JSON
     | GotTime of DateTime
 
 let init () = { time = None }, Cmd.none
@@ -18,7 +21,7 @@ let init () = { time = None }, Cmd.none
 let update msg model =
     match msg with
     | Refresh -> model, Cmd.none
-    | GotTime dateTime -> { model with time = Some dateTime }, Cmd.none
+    | GotTime timeStr -> { model with time = Some timeStr }, Cmd.none
 
 let view model dispatch =
     div [] [
@@ -33,4 +36,14 @@ let view model dispatch =
         p [] [ button [ OnClick(fun _ -> dispatch Refresh) ] [ str "Refresh" ] ]
     ]
 
-let subscriptions model = [ [ "time" ], GotTime ]
+let timer onTick =
+    let start dispatch =
+        let intervalId = JS.setInterval (fun _ -> dispatch (onTick DateTime.Now)) 1000
+
+        { new IDisposable with
+            member _.Dispose() = JS.clearInterval intervalId
+        }
+
+    start
+
+let subscriptions model = [ [ "time" ], timer GotTime ]
