@@ -3,66 +3,41 @@ open Fable.React.Props
 open Elmish
 open Elmish.React
 open Elmish.Navigation
-open Elmish.UrlParser
-
-type Route =
-    | Counter' of int
-    | Time'
-
-let router = oneOf [ map Counter' (s "counter" </> i32); map Time' (s "time") ]
 
 
 type Page =
     | Counter of Pages.Counter.Model
     | Time of Pages.Time.Model
 
-
 type Msg =
     | CounterMsg of Pages.Counter.Msg
     | TimeMsg of Pages.Time.Msg
 
+type Model = { page: Page }
 
-type Model = { route: Route; page: Page }
 
+let urlUpdate routeOpt model =
+    match routeOpt with
 
-let urlUpdate (result: Option<Route>) model =
-    match result with
-
-    | Some(Counter' count) ->
+    | Some(Router.Route.Counter count) ->
         let page, cmd = Pages.Counter.init count
 
-        {
-            model with
-                route = result.Value
-                page = Counter page
-        },
-        cmd
+        { model with page = Counter page }, Cmd.map CounterMsg cmd
 
-    | Some Time' ->
+    | Some(Router.Route.Time) ->
         let page, cmd = Pages.Time.init ()
 
-        {
-            model with
-                route = result.Value
-                page = Time page
-        },
-        cmd
+        { model with page = Time page }, Cmd.map TimeMsg cmd
 
     // no matching route - go home
     | None -> model, Navigation.modifyUrl "#"
 
 
+let init routeOpt =
+    let model, _ = Pages.Counter.init 0
 
+    urlUpdate routeOpt { page = (Counter model) }
 
-let init () =
-    let initialCount = 0
-    let page, cmd = Pages.Counter.init initialCount
-
-    {
-        route = Counter' initialCount
-        page = Counter page
-    },
-    Cmd.map CounterMsg cmd
 
 let update msg model =
     match msg, model.page with
@@ -100,7 +75,7 @@ let view model dispatch =
 
 // App
 Program.mkProgram init update view
-|> Program.toNavigable (parseHash router) urlUpdate
+|> Program.toNavigable (Router.parser) urlUpdate
 |> Program.withReactBatched "root"
 // |> Program.withConsoleTrace
 |> Program.run
