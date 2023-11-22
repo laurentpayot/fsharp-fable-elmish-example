@@ -37,7 +37,12 @@ let view model dispatch =
 
 let timer onTick =
     let start dispatch =
-        document.addEventListener ("time", (fun event -> dispatch (onTick "TODO")))
+        document.addEventListener (
+            "time",
+            // TODO extract detail.time from event!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            (fun event -> dispatch (onTick <| event.timeStamp.ToString())),
+            false
+        )
 
         { new IDisposable with
             member _.Dispose() =
