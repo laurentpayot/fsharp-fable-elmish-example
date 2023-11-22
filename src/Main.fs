@@ -36,7 +36,7 @@ let urlUpdate routeOpt model =
 let init routeOpt =
     let model, _ = Pages.Counter.init 0
 
-    urlUpdate routeOpt { page = (Counter model) }
+    urlUpdate routeOpt { page = Counter model }
 
 
 let update msg model =
