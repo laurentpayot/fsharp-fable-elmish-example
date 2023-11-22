@@ -26,7 +26,7 @@ let view model dispatch =
         p [] [
             str
             <| if model.time = None then
-                   "Waiting nnnfor time..."
+                   "Waiting for time..."
                else
                    model.time.Value.ToString()
         ]
