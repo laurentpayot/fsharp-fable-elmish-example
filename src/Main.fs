@@ -3,6 +3,7 @@ open Fable.React.Props
 open Elmish
 open Elmish.React
 open Elmish.Navigation
+open Elmish.HMR // must be the last Elmish package
 
 open Router
 
