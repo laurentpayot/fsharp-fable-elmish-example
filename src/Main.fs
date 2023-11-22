@@ -29,8 +29,8 @@ let urlUpdate routeOpt model =
 
         { model with page = Time page }, Cmd.map TimeMsg cmd
 
-    // no matching route - go home
-    | None -> model, Navigation.modifyUrl "#"
+    // no matching route: go home
+    | None -> model, Navigation.modifyUrl "/"
 
 
 let init routeOpt =
