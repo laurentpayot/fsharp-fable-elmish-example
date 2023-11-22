@@ -3,18 +3,17 @@
 open Fable.React
 open Fable.React.Props
 open Elmish
-
+open Browser.Dom
 open System
-open Fable.Core
 
 
-type Model = { time: DateTime option }
-// type Model = { time: string option } //TODO JSON
+// type Model = { time: DateTime option }
+type Model = { time: string option } //TODO JSON
 
 type Msg =
     | Refresh
-    // | GotTime of string //TODO JSON
-    | GotTime of DateTime
+    // | GotTime of DateTime
+    | GotTime of string //TODO JSON
 
 let init () = { time = None }, Cmd.none
 
@@ -25,23 +24,23 @@ let update msg model =
 
 let view model dispatch =
     div [] [
-        h2 [] [ str "Time" ]
+        h2 [] [ str "Timer" ]
         p [] [
             str
             <| if model.time = None then
                    "Waiting for time..."
                else
-                   model.time.Value.ToString()
+                   model.time.Value
         ]
         p [] [ button [ OnClick(fun _ -> dispatch Refresh) ] [ str "Refresh" ] ]
     ]
 
 let timer onTick =
     let start dispatch =
-        let intervalId = JS.setInterval (fun _ -> dispatch (onTick DateTime.Now)) 1000
+        document.addEventListener ("time", (fun event -> dispatch (onTick "TODO")))
 
         { new IDisposable with
-            member _.Dispose() = JS.clearInterval intervalId
+            member _.Dispose() = ()
         }
 
     start
