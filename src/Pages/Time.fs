@@ -40,7 +40,8 @@ let timer onTick =
         document.addEventListener ("time", (fun event -> dispatch (onTick "TODO")))
 
         { new IDisposable with
-            member _.Dispose() = ()
+            member _.Dispose() =
+                document.removeEventListener ("time", (fun _ -> ()))
         }
 
     start
