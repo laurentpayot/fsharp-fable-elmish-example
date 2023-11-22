@@ -17,4 +17,5 @@ dotnet fsi
 
 ## TO DO
 
-- Routing with https://elmish.github.io/browser/
+- HMR https://elmish.github.io/hmr/
+- Subscriptions https://elmish.github.io/elmish/docs/subscription.html
