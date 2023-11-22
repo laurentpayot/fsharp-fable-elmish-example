@@ -19,6 +19,7 @@
     <PackageReference Include="Fable.Browser.Dom" Version="2.14.0" />
     <PackageReference Include="Fable.Core" Version="4.2.0" />
     <PackageReference Include="Fable.Elmish" Version="4.1.0" />
+    <PackageReference Include="Fable.Elmish.Browser" Version="4.0.3" />
     <PackageReference Include="Fable.Elmish.React" Version="4.0.0" />
     <PackageReference Include="Fable.React" Version="9.3.0" />
   </ItemGroup>

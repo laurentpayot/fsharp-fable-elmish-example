@@ -12,7 +12,7 @@ type Msg =
     | Decrement
     | Random
 
-let init () = { count = 0 }, Cmd.none
+let init initialCount = { count = initialCount }, Cmd.none
 
 let update msg model =
     match msg with
