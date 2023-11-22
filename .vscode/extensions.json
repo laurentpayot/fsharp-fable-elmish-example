@@ -1,6 +1,7 @@
 {
     "recommendations": [
-        "Ionide.Ionide-fsharp",
-        "antfu.vite"
+        "ionide.ionide-fsharp",
+        "antfu.vite",
+        "tintoy.msbuild-project-tools"
     ]
 }
