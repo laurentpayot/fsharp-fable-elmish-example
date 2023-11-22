@@ -17,5 +17,4 @@ dotnet fsi
 
 ## TO DO
 
-- HMR https://elmish.github.io/hmr/
-- Subscriptions https://elmish.github.io/elmish/docs/subscription.html
+- Subscriptions using custom events https://github.com/fable-compiler/fable-browser/blob/master/src/Event/Browser.Event.fs
