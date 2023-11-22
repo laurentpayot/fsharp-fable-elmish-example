@@ -72,6 +72,12 @@ let update msg model =
 
     | _ -> model, Cmd.none
 
+let subscriptions model =
+    Sub.batch [
+        match model.pageModel with
+        | Time pageModel -> Sub.map "time" TimeMsg <| Pages.Time.subscriptions pageModel
+        | _ -> Sub.none
+    ]
 
 let view model dispatch =
     div [] [
@@ -90,6 +96,7 @@ let view model dispatch =
 // App
 Program.mkProgram init update view
 |> Program.toNavigable parser urlUpdate
+|> Program.withSubscription subscriptions
 |> Program.withReactBatched "root"
 // |> Program.withConsoleTrace
 |> Program.run

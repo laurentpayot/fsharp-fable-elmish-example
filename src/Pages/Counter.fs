@@ -25,6 +25,7 @@ let update msg model =
         },
         Cmd.none
 
+let subscriptions model = []
 
 let view model dispatch =
     div [] [
