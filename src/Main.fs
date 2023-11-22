@@ -77,7 +77,8 @@ let view model dispatch =
     div [] [
         h1 [] [ str "F# example" ]
         menu [] [
-            li [] [ a [ Href "/counter/0" ] [ str "Counter" ] ]
+            li [] [ a [ Href "/counter/0" ] [ str "Counter starting at 0" ] ]
+            li [] [ a [ Href "/counter/50" ] [ str "Counter starting at 50" ] ]
             li [] [ a [ Href "/time" ] [ str "Time" ] ]
         ]
         hr []
