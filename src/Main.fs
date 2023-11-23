@@ -82,7 +82,7 @@ let subscriptions model =
 
 let view model dispatch =
     div [] [
-        h1 [] [ str "F# example" ]
+        h1 [] [ str "Elmish example" ]
         menu [] [
             li [] [ a [ Href "/counter/0" ] [ str "Counter starting at 0" ] ]
             li [] [ a [ Href "/counter/50" ] [ str "Counter starting at 50" ] ]
