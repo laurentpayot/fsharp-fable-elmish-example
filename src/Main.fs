@@ -99,5 +99,7 @@ Program.mkProgram init update view
 |> Program.withSubscription subscriptions
 |> Program.toNavigable parser urlUpdate
 |> Program.withReactBatched "root"
-// |> Program.withConsoleTrace
+#if DEBUG
+|> Program.withConsoleTrace
+#endif
 |> Program.run
