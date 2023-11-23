@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- [.NET](https://dotnet.microsoft.com/en-us/download/dotnet) version 8 (the latest) for Fable and version 7 for the update tool. For Ubuntu, install them with: `sudo apt install dotnet-sdk-7.0 dotnet-sdk-8.0`
+- [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet): for Ubuntu, install them with: `sudo apt install dotnet-sdk-8.0`
 - [pnpm](https://pnpm.io/)
 - [Node.js](https://nodejs.org/) installed via pnpm with `pnpm env use --global latest`
 - run `pnpm i` to install npm dependencies as well as F# dependencies.

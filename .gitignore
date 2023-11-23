@@ -1,6 +1,14 @@
-.fake
-bin
-node_modules
-obj
-output
-dist
+# F#
+.fake/
+bin/
+obj/
+
+# npm
+node_modules/
+
+# Vite
+output/
+dist/
+
+# Paket dependency manager
+paket-files/

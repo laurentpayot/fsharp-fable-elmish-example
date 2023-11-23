@@ -3,7 +3,9 @@
     "browse-lite.startUrl": "localhost:5000",
     "cSpell.words": [
         "Elmish",
-        "Ionide"
+        "fantomas",
+        "Ionide",
+        "paket"
     ],
     "[fsharp]": {
         "editor.formatOnSave": true,
