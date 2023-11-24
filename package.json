@@ -21,7 +21,7 @@
   "homepage": "https://github.com/laurentpayot/Fsharp-counter-web-app#readme",
   "type": "module",
   "scripts": {
-    "restore": "dotnet tool restore && dotnet packet restore",
+    "restore": "dotnet tool restore && dotnet paket restore",
     "postinstall": "pnpm restore",
     "test": "pnpm test",
     "start": "dotnet fable watch --outDir output --sourceMaps --run pnpm vite",
