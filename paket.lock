@@ -52,3 +52,6 @@ NUGET
       Fable.React.Types (>= 18.3) - restriction: >= netstandard2.0
       FSharp.Core (>= 4.7.2) - restriction: >= netstandard2.0
     FSharp.Core (8.0.100) - restriction: >= netstandard2.0
+    Thoth.Json (10.2)
+      Fable.Core (>= 3.6.2) - restriction: >= netstandard2.0
+      FSharp.Core (>= 4.7.2) - restriction: >= netstandard2.0

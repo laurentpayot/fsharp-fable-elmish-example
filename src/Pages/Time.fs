@@ -2,10 +2,11 @@
 
 open Fable.React
 open Fable.React.Props
+open Fable.Core.JsInterop
 open Elmish
 open Browser.Dom
 open System
-
+open Thoth.Json
 
 // type Model = { time: DateTime option }
 type Model = { time: string option } //TODO JSON
@@ -35,20 +36,19 @@ let view model dispatch =
         p [] [ button [ OnClick(fun _ -> dispatch Refresh) ] [ str "Refresh" ] ]
     ]
 
-let timer onTick =
-    let start dispatch =
-        document.addEventListener (
-            "time",
-            // TODO extract detail.time from event!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            (fun event -> dispatch (onTick <| event.timeStamp.ToString())),
-            false
-        )
+let onTime dispatch =
+    document.addEventListener (
+        "time",
+        (fun event ->
+            let detail = event?detail
+            dispatch (GotTime <| detail)),
+        false
+    )
 
-        { new IDisposable with
-            member _.Dispose() =
-                document.removeEventListener ("time", (fun _ -> ()))
-        }
+    { new IDisposable with
+        member _.Dispose() =
+            document.removeEventListener ("time", (fun _ -> ()))
+    }
 
-    start
 
-let subscriptions model = [ [ "time" ], timer GotTime ]
+let subscriptions model = [ [ "time" ], onTime ]
