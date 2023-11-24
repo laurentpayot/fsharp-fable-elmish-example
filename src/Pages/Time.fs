@@ -36,19 +36,21 @@ let view model dispatch =
         p [] [ button [ OnClick(fun _ -> dispatch Refresh) ] [ str "Refresh" ] ]
     ]
 
-let onTime dispatch =
-    document.addEventListener (
-        "time",
-        (fun event ->
-            let detail = event?detail
-            dispatch (GotTime <| detail)),
-        false
-    )
+let onEvent eventName toMsg =
+    let start dispatch =
+        document.addEventListener (
+            eventName,
+            (fun event ->
+                let detail = event?detail
+                dispatch (toMsg <| detail)),
+            false
+        )
 
-    { new IDisposable with
-        member _.Dispose() =
-            document.removeEventListener ("time", (fun _ -> ()))
-    }
+        { new IDisposable with
+            member _.Dispose() =
+                document.removeEventListener (eventName, (fun _ -> ()))
+        }
 
+    start
 
-let subscriptions model = [ [ "time" ], onTime ]
+let subscriptions model = [ [ "time" ], onEvent "time" GotTime ]
