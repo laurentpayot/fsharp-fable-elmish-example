@@ -25,7 +25,7 @@ let update (msg: Msg) (model: Model) =
         },
         Cmd.none
 
-let subscriptions (model: Model) = []
+let subscriptions (model: Model) : Sub<Msg> = []
 
 let view (model: Model) (dispatch: Msg -> unit) =
     div [] [
