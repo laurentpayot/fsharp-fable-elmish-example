@@ -17,4 +17,5 @@ dotnet fsi
 
 ## TO DO
 
-- Subscriptions using custom events https://github.com/fable-compiler/fable-browser/blob/master/src/Event/Browser.Event.fs
+- fix warnings
+- see if `GotJsonTime of JsonValue` can be used

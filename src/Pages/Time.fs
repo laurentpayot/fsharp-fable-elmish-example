@@ -8,20 +8,37 @@ open Browser.Dom
 open System
 open Thoth.Json
 
+type TimeRecord = { time: string; foo: string option }
+
 // type Model = { time: DateTime option }
-type Model = { time: string option } //TODO JSON
+type Model = { time: string option }
 
 type Msg =
     | Refresh
-    // | GotTime of DateTime
-    | GotTime of string //TODO JSON
+    // | GotJsonTime of DateTime
+    | GotJsonTime of string
+
+
+let decoder: Decoder<TimeRecord> =
+    Decode.object (fun get -> {
+        time = get.Required.Field "time" Decode.string
+        foo = get.Optional.Field "foo" Decode.string
+    })
 
 let init () = { time = None }, Cmd.none
 
 let update msg model =
     match msg with
     | Refresh -> model, Cmd.none
-    | GotTime timeStr -> { model with time = Some timeStr }, Cmd.none
+    | GotJsonTime json ->
+        match Decode.fromString decoder (json) with
+        | Ok timeRecord ->
+            {
+                model with
+                    time = Some timeRecord.time
+            },
+            Cmd.none
+        | Error _ -> model, Cmd.none
 
 let view model dispatch =
     div [] [
@@ -40,9 +57,7 @@ let onEvent eventName toMsg =
     let start dispatch =
         document.addEventListener (
             eventName,
-            (fun event ->
-                let detail = event?detail
-                dispatch (toMsg <| detail)),
+            (fun event -> dispatch (toMsg <| event?detail)),
             false
         )
 
@@ -53,4 +68,4 @@ let onEvent eventName toMsg =
 
     start
 
-let subscriptions model = [ [ "time" ], onEvent "time" GotTime ]
+let subscriptions model = [ [ "time" ], onEvent "time" GotJsonTime ]
