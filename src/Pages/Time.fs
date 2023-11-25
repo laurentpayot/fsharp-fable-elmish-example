@@ -25,9 +25,9 @@ let decoder: Decoder<TimeRecord> =
         foo = get.Optional.Field "foo" Decode.string
     })
 
-let init () = { time = None }, Cmd.none
+let init () : Model * Cmd<Msg> = { time = None }, Cmd.none
 
-let update (msg: Msg) (model: Model) =
+let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
     match msg with
     | Refresh -> model, Cmd.none
     | GotJsonTime str ->
@@ -40,7 +40,7 @@ let update (msg: Msg) (model: Model) =
             Cmd.none
         | Error _ -> model, Cmd.none
 
-let view (model: Model) (dispatch: Msg -> unit) =
+let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
     div [] [
         h2 [] [ str "Timer" ]
         p [] [
@@ -53,7 +53,7 @@ let view (model: Model) (dispatch: Msg -> unit) =
         p [] [ button [ OnClick(fun _ -> dispatch Refresh) ] [ str "Refresh" ] ]
     ]
 
-let onEvent (eventName: string) (toMsg: string -> Msg) =
+let onEvent (eventName: string) (toMsg: string -> Msg) : (Dispatch<Msg> -> IDisposable) =
     let start dispatch =
         document.addEventListener (
             eventName,
