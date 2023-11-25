@@ -68,4 +68,5 @@ let onEvent (eventName: string) (toMsg: string -> Msg) : (Dispatch<Msg> -> IDisp
 
     start
 
-let subscriptions (model: Model) = [ [ "time" ], onEvent "time" GotJsonTime ]
+
+let subscriptions (model: Model) : Sub<Msg> = [ [ "time" ], onEvent "time" GotJsonTime ]
