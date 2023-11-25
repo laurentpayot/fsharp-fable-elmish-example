@@ -12,9 +12,9 @@ type Msg =
     | Decrement
     | Random
 
-let init initialCount = { count = initialCount }, Cmd.none
+let init (initialCount: int) = { count = initialCount }, Cmd.none
 
-let update msg model =
+let update (msg: Msg) (model: Model) =
     match msg with
     | Increment -> { model with count = model.count + 1 }, Cmd.none
     | Decrement -> { model with count = model.count - 1 }, Cmd.none
@@ -25,9 +25,9 @@ let update msg model =
         },
         Cmd.none
 
-let subscriptions model = []
+let subscriptions (model: Model) = []
 
-let view model dispatch =
+let view (model: Model) (dispatch: Msg -> unit) =
     div [] [
         h2 [] [ str "Counter" ]
         p [] [
