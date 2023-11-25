@@ -8,7 +8,8 @@ open Browser.Dom
 open System
 open Thoth.Json
 
-type TimeRecord = { time: string; foo: string option }
+// type TimeRecord = { time: string; foo: string option }
+type TimeRecord = { time: string }
 
 // type Model = { time: DateTime option }
 type Model = { time: string option }
@@ -22,7 +23,7 @@ type Msg =
 let decoder: Decoder<TimeRecord> =
     Decode.object (fun get -> {
         time = get.Required.Field "time" Decode.string
-        foo = get.Optional.Field "foo" Decode.string
+    // foo = get.Optional.Field "foo" Decode.string
     })
 
 let init () = { time = None }, Cmd.none
@@ -30,8 +31,8 @@ let init () = { time = None }, Cmd.none
 let update msg model =
     match msg with
     | Refresh -> model, Cmd.none
-    | GotJsonTime json ->
-        match Decode.fromString decoder (json) with
+    | GotJsonTime str ->
+        match Decode.fromString decoder str with
         | Ok timeRecord ->
             {
                 model with
