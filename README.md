@@ -17,4 +17,5 @@ dotnet fsi
 
 ## TO DO
 
-- fix warnings
+- random count
+- async JS interop
