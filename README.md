@@ -18,4 +18,3 @@ dotnet fsi
 ## TO DO
 
 - fix warnings
-- see if `GotJsonTime of JsonValue` can be used
