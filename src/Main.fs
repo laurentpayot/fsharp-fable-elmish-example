@@ -18,7 +18,7 @@ type Msg =
 type Model = { pageModel: PageModel }
 
 
-let urlUpdate routeOpt model =
+let urlUpdate (routeOpt: Route option) (model: Model) : Model * Cmd<Msg> =
     match routeOpt with
 
     | Some(Route.Counter count) ->
@@ -43,13 +43,13 @@ let urlUpdate routeOpt model =
     | None -> model, Navigation.modifyUrl "/"
 
 
-let init routeOpt =
+let init (routeOpt: Route option) : Model * Cmd<Msg> =
     let pageModel, _ = Pages.Counter.init 0
 
     urlUpdate routeOpt { pageModel = Counter pageModel }
 
 
-let update msg model =
+let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
     match msg, model.pageModel with
 
     | CounterMsg pageMsg, Counter pageModel ->
@@ -73,14 +73,14 @@ let update msg model =
 
     | _ -> model, Cmd.none
 
-let subscriptions model =
+let subscriptions (model: Model) : Sub<Msg> =
     Sub.batch [
         match model.pageModel with
         | Time pageModel -> Sub.map "time" TimeMsg <| Pages.Time.subscriptions pageModel
         | _ -> Sub.none
     ]
 
-let view model dispatch =
+let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
     div [] [
         h1 [] [ str "Elmish example" ]
         menu [] [
