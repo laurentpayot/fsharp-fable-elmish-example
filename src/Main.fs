@@ -5,7 +5,6 @@ open Elmish
 open Browser.Dom
 open Elmish.React
 open Elmish.Navigation
-open Elmish.HMR // must be the last Elmish package
 
 open Router
 

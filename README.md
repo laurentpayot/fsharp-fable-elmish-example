@@ -17,5 +17,4 @@ dotnet fsi
 
 ## TO DO
 
-- random count
 - async JS interop

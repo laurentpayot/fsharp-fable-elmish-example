@@ -2,7 +2,6 @@ Fable.Core
 Fable.Browser.Dom
 Fable.Elmish
 Fable.Elmish.Browser
-Fable.Elmish.HMR
 Fable.Elmish.React
 Fable.React
 Thoth.Json
