@@ -6,6 +6,7 @@
     <RootNamespace>App</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="src/Remote.fs" />
 
     <!-- PAGES -->
     <Compile Include="src/Pages/Counter.fs" />
