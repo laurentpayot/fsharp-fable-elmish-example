@@ -1,6 +1,8 @@
 ﻿open Fable.React
 open Fable.React.Props
+open Fable.Core.JsInterop
 open Elmish
+open Browser.Dom
 open Elmish.React
 open Elmish.Navigation
 open Elmish.HMR // must be the last Elmish package
@@ -17,6 +19,7 @@ type Msg =
 
 type Model = { pageModel: PageModel }
 
+type Flags = { toLog: string }
 
 let urlUpdate (routeOpt: Route option) (model: Model) : Model * Cmd<Msg> =
     match routeOpt with
@@ -43,8 +46,9 @@ let urlUpdate (routeOpt: Route option) (model: Model) : Model * Cmd<Msg> =
     | None -> model, Navigation.modifyUrl "/"
 
 
-let init (routeOpt: Route option) : Model * Cmd<Msg> =
+let init (flags: Flags) (routeOpt: Route option) : Model * Cmd<Msg> =
     let pageModel, _ = Pages.Counter.init 0
+    printfn "%s" flags.toLog
 
     urlUpdate routeOpt { pageModel = Counter pageModel }
 
@@ -94,12 +98,14 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
         | Time pageModel -> Pages.Time.view pageModel (TimeMsg >> dispatch)
     ]
 
-// App
-Program.mkProgram init update view
-|> Program.withSubscription subscriptions
-|> Program.toNavigable parser urlUpdate
-|> Program.withReactBatched "root"
+let private startApp (flags: Flags) =
+    Program.mkProgram (init flags) update view
+    |> Program.withSubscription subscriptions
+    |> Program.toNavigable parser urlUpdate
+    |> Program.withReactBatched "root"
 #if DEBUG
-|> Program.withConsoleTrace
+    |> Program.withConsoleTrace
 #endif
-|> Program.run
+    |> Program.run
+
+window?startApp <- startApp

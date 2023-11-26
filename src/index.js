@@ -1,5 +1,7 @@
 import "../output/src/Main.js"
 
+startApp({ toLog: "App started!"})
+
 function sendApp(event, payload) {
     return document.dispatchEvent(new CustomEvent(event, { detail: JSON.stringify(payload) }))
 }
