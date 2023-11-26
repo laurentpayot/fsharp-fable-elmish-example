@@ -19,7 +19,7 @@ type Msg =
 
 type Model = { pageModel: PageModel }
 
-type Flags = { toLog: string }
+type Flags = { count: int }
 
 let urlUpdate (routeOpt: Route option) (model: Model) : Model * Cmd<Msg> =
     match routeOpt with
@@ -47,8 +47,7 @@ let urlUpdate (routeOpt: Route option) (model: Model) : Model * Cmd<Msg> =
 
 
 let init (flags: Flags) (routeOpt: Route option) : Model * Cmd<Msg> =
-    let pageModel, _ = Pages.Counter.init 0
-    printfn "%s" flags.toLog
+    let pageModel, _ = Pages.Counter.init flags.count
 
     urlUpdate routeOpt { pageModel = Counter pageModel }
 
