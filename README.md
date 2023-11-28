@@ -17,5 +17,4 @@ dotnet fsi
 
 ## TO DO
 
-- use inferno instead of preact??? https://www.infernojs.org/docs/guides/switching-to-inferno
 - use fre instead of preact??? https://github.com/frejs/fre#usage
