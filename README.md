@@ -8,13 +8,3 @@
 - run `pnpm i` to install npm dependencies as well as F# dependencies.
 
 [Ionide](https://ionide.io/) plugin for your IDE is highly recommended.
-
-## F# interactive mode
-
-```bash
-dotnet fsi
-```
-
-## TO DO
-
-- use fre instead of preact??? https://github.com/frejs/fre#usage
