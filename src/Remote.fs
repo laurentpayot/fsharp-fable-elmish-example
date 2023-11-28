@@ -1,6 +1,6 @@
 module Remote
 
-type Remote<'a> =
+type 'a Remote =
     | NotAsked
     | Loading
     | Loaded of 'a

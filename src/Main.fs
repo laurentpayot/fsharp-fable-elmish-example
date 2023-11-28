@@ -20,7 +20,7 @@ type Model = { pageModel: PageModel }
 
 type Flags = { count: int }
 
-let urlUpdate (routeOpt: Route option) (model: Model) : Model * Cmd<Msg> =
+let urlUpdate (routeOpt: Route option) (model: Model) : Model * Msg Cmd =
     match routeOpt with
 
     | Some(Route.Counter count) ->
@@ -45,13 +45,13 @@ let urlUpdate (routeOpt: Route option) (model: Model) : Model * Cmd<Msg> =
     | None -> model, Navigation.modifyUrl "/"
 
 
-let init (flags: Flags) (routeOpt: Route option) : Model * Cmd<Msg> =
+let init (flags: Flags) (routeOpt: Route option) : Model * Msg Cmd =
     let pageModel, _ = Pages.Counter.init flags.count
 
     urlUpdate routeOpt { pageModel = Counter pageModel }
 
 
-let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
+let update (msg: Msg) (model: Model) : Model * Msg Cmd =
     match msg, model.pageModel with
 
     | CounterMsg pageMsg, Counter pageModel ->
@@ -75,7 +75,7 @@ let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
 
     | _ -> model, Cmd.none
 
-let subscriptions (model: Model) : Sub<Msg> =
+let subscriptions (model: Model) : Msg Sub =
     Sub.batch [
         match model.pageModel with
         | Time pageModel -> Sub.map "time" TimeMsg <| Pages.Time.subscriptions pageModel

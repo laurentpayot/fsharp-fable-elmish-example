@@ -18,5 +18,4 @@ dotnet fsi
 ## TO DO
 
 - async JS interop
-  - better types
   - try something different from `Cmd.OfPromise.either` (two messages needed)
