@@ -17,6 +17,5 @@ dotnet fsi
 
 ## TO DO
 
-- use Cmd.ofSub??? https://medium.com/@MangelMaxime/my-tips-for-working-with-elmish-ab8d193d52fd#101b
 - use inferno instead of preact??? https://www.infernojs.org/docs/guides/switching-to-inferno
 - use fre instead of preact??? https://github.com/frejs/fre#usage
