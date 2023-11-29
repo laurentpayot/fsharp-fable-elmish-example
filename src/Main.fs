@@ -84,16 +84,21 @@ let subscriptions (model: Model) : Msg Sub =
 
 let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
     div [] [
-        h1 [] [ str "F# Fable Elmish example" ]
-        menu [] [
-            li [] [ a [ Href "/counter/0" ] [ str "Counter starting at 0" ] ]
-            li [] [ a [ Href "/counter/50" ] [ str "Counter starting at 50" ] ]
-            li [] [ a [ Href "/time" ] [ str "Time" ] ]
+        header [] [
+            h1 [] [ str "F# Fable Elmish example" ]
+            nav [] [
+                ul [] [
+                    li [] [ a [ Href "/counter/0" ] [ str "Counter starting at 0" ] ]
+                    li [] [ a [ Href "/counter/50" ] [ str "Counter starting at 50" ] ]
+                    li [] [ a [ Href "/time" ] [ str "Time" ] ]
+                ]
+            ]
+            hr []
         ]
-        hr []
-        match model.pageModel with
-        | Counter pageModel -> Pages.Counter.view pageModel (CounterMsg >> dispatch)
-        | Time pageModel -> Pages.Time.view pageModel (TimeMsg >> dispatch)
+        main []
+        <| match model.pageModel with
+           | Counter pageModel -> Pages.Counter.view pageModel (CounterMsg >> dispatch)
+           | Time pageModel -> Pages.Time.view pageModel (TimeMsg >> dispatch)
     ]
 
 let private startApp (flags: Flags) =

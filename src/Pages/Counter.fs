@@ -50,28 +50,27 @@ let update (msg: Msg) (model: Model) =
 
 let subscriptions (model: Model) : Msg Sub = []
 
-let view (model: Model) (dispatch: Msg -> unit) =
-    div [] [
-        h2 [] [ str "Counter" ]
-        p [] [
-            button [ OnClick(fun _ -> dispatch Decrement) ] [ str "-" ]
-            str (sprintf "%A" model.count)
-            button [ OnClick(fun _ -> dispatch Increment) ] [ str "+" ]
-        ]
-        p [] [
-            button [ OnClick(fun _ -> dispatch Double) ] [ str "Double" ]
-            button [ OnClick(fun _ -> dispatch Randomize) ] [ str "Random" ]
-        ]
-        p [] [ button [ OnClick(fun _ -> dispatch GetCat) ] [ str "Cat" ] ]
-        match model.cat with
-        | NotAsked -> p [] [ str "No cat yet" ]
-        | Loading -> p [] [ str "Loading…" ]
-        | Loaded base64 ->
-            p [] [
-                img [
-                    Src("data:image/png;base64," + base64)
-                    Style [ Height "200px"; Width "200px" ]
-                ]
-            ]
-        | Error err -> p [] [ str err.Message ]
+let view (model: Model) (dispatch: Msg -> unit) : ReactElement list = [
+    h2 [] [ str "Counter" ]
+    p [] [
+        button [ OnClick(fun _ -> dispatch Decrement) ] [ str "-" ]
+        str (sprintf "%A" model.count)
+        button [ OnClick(fun _ -> dispatch Increment) ] [ str "+" ]
     ]
+    p [] [
+        button [ OnClick(fun _ -> dispatch Double) ] [ str "Double" ]
+        button [ OnClick(fun _ -> dispatch Randomize) ] [ str "Random" ]
+    ]
+    p [] [ button [ OnClick(fun _ -> dispatch GetCat) ] [ str "Cat" ] ]
+    match model.cat with
+    | NotAsked -> p [] [ str "No cat yet" ]
+    | Loading -> p [] [ str "Loading…" ]
+    | Loaded base64 ->
+        p [] [
+            img [
+                Src("data:image/png;base64," + base64)
+                Style [ Height "200px"; Width "200px" ]
+            ]
+        ]
+    | Error err -> p [] [ str err.Message ]
+]

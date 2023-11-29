@@ -40,18 +40,17 @@ let update (msg: Msg) (model: Model) : Model * Msg Cmd =
             Cmd.none
         | Error _ -> model, Cmd.none
 
-let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
-    div [] [
-        h2 [] [ str "Timer" ]
-        p [] [
-            str
-            <| if model.time = None then
-                   "Waiting for time..."
-               else
-                   model.time.Value
-        ]
-        p [] [ button [ OnClick(fun _ -> dispatch Refresh) ] [ str "Refresh" ] ]
+let view (model: Model) (dispatch: Msg -> unit) : ReactElement list = [
+    h2 [] [ str "Timer" ]
+    p [] [
+        str
+        <| if model.time = None then
+               "Waiting for time..."
+           else
+               model.time.Value
     ]
+    p [] [ button [ OnClick(fun _ -> dispatch Refresh) ] [ str "Refresh" ] ]
+]
 
 let onEvent (eventName: string) (toMsg: string -> Msg) : (Msg Dispatch -> IDisposable) =
     let start dispatch =
