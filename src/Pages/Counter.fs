@@ -1,16 +1,10 @@
 ﻿module Pages.Counter
 
-open Fable.Core.JS
-open Fable.Core.JsInterop
 open Fable.React
 open Fable.React.Props
 open Elmish
 
 open Remote
-
-let multiply (a: int) (b: int) : int = importMember "../lib.js"
-let catBase64 (text: string) (fontSize: int) : string Promise = importMember "../lib.js"
-
 
 type Model = { count: int; cat: string Remote }
 
@@ -33,7 +27,7 @@ let update (msg: Msg) (model: Model) =
     | Double ->
         {
             model with
-                count = multiply model.count 2
+                count = FFI.multiply model.count 2
         },
         Cmd.none
     | Randomize ->
@@ -44,7 +38,11 @@ let update (msg: Msg) (model: Model) =
         Cmd.none
     | GetCat ->
         { model with cat = Loading },
-        Cmd.OfPromise.either (fun () -> catBase64 (model.count.ToString()) 50) () GotCat GotCatError
+        Cmd.OfPromise.either
+            (fun () -> FFI.catBase64 (model.count.ToString()) 50)
+            ()
+            GotCat
+            GotCatError
     | GotCat base64 -> { model with cat = Loaded base64 }, Cmd.none
     | GotCatError err -> { model with cat = Error err }, Cmd.none
 
