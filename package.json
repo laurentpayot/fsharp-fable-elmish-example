@@ -1,24 +1,28 @@
 {
-  "name": "fsharp-counter-web-app",
+  "name": "fsharp-fable-elmish-examble",
   "version": "0.0.1",
-  "description": "F# counter web app",
+  "description": "F# Fable Elmish example",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/laurentpayot/Fsharp-counter-web-app.git"
+    "url": "git+https://github.com/laurentpayot/fsharp-fable-elmish-examble.git"
   },
   "keywords": [
     "F#",
-    "counter",
-    "Vite",
     "Fable",
-    "Elmish"
+    "Elmish",
+    "Vite",
+    "Preact",
+    "example",
+    "counter",
+    "routing",
+    "subscription"
   ],
   "author": "Laurent Payot",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/laurentpayot/Fsharp-counter-web-app/issues"
+    "url": "https://github.com/laurentpayot/fsharp-fable-elmish-examble/issues"
   },
-  "homepage": "https://github.com/laurentpayot/Fsharp-counter-web-app#readme",
+  "homepage": "https://github.com/laurentpayot/fsharp-fable-elmish-examble#readme",
   "type": "module",
   "scripts": {
     "restore": "dotnet tool restore && dotnet paket restore",

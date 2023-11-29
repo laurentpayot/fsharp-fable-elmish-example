@@ -1,4 +1,4 @@
-# F# counter web app
+# F# Fable Elmish example
 
 ## Prerequisites
 
