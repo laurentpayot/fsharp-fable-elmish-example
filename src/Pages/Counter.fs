@@ -27,7 +27,7 @@ let update (msg: Msg) (model: Model) =
     | Double ->
         {
             model with
-                count = FFI.multiply model.count 2
+                count = Lib.multiply model.count 2
         },
         Cmd.none
     | Randomize ->
@@ -39,7 +39,7 @@ let update (msg: Msg) (model: Model) =
     | GetCat ->
         { model with cat = Loading },
         Cmd.OfPromise.either
-            (fun () -> FFI.catBase64 (model.count.ToString()) 50)
+            (fun () -> Lib.catBase64 (model.count.ToString()) 50)
             ()
             GotCat
             GotCatError
