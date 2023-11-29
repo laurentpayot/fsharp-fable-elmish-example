@@ -8,3 +8,7 @@
 - run `pnpm i` to install npm dependencies as well as F# dependencies.
 
 [Ionide](https://ionide.io/) plugin for your IDE is highly recommended.
+
+## TO DO
+
+- Put a list of all the Elmish features used by this example in the README file.
