@@ -44,11 +44,7 @@ let update (msg: Msg) (model: Model) =
         Cmd.none
     | GetCat ->
         { model with cat = Loading },
-        Cmd.OfPromise.either
-            (fun () -> catBase64 (model.count.ToString()) 100)
-            ()
-            GotCat
-            GotCatError
+        Cmd.OfPromise.either (fun () -> catBase64 (model.count.ToString()) 50) () GotCat GotCatError
     | GotCat base64 -> { model with cat = Loaded base64 }, Cmd.none
     | GotCatError err -> { model with cat = Error err }, Cmd.none
 
@@ -71,6 +67,11 @@ let view (model: Model) (dispatch: Msg -> unit) =
         | NotAsked -> p [] [ str "No cat yet" ]
         | Loading -> p [] [ str "Loading…" ]
         | Loaded base64 ->
-            p [] [ img [ Src("data:image/png;base64," + base64); Style [ Height "200px" ] ] ]
+            p [] [
+                img [
+                    Src("data:image/png;base64," + base64)
+                    Style [ Height "200px"; Width "200px" ]
+                ]
+            ]
         | Error err -> p [] [ str err.Message ]
     ]
