@@ -9,12 +9,10 @@ open System
 open Thoth.Json
 
 
-// type Model = { time: DateTime option }
 type Model = { time: string option }
 
 type Msg =
     | Refresh
-    // | GotJsonTime of DateTime
     | GotJsonTime of string
 
 type TimeRecord = { time: string; foo: string option }
