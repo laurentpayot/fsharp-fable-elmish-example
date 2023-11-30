@@ -30,7 +30,7 @@ let update (msg: Msg) (model: Model) =
     | Double ->
         {
             model with
-                count = Lib.multiply model.count 2
+                count = MyJsLib.multiply model.count 2
         },
         Cmd.none
     | Randomize ->
@@ -42,7 +42,7 @@ let update (msg: Msg) (model: Model) =
     | GetCat ->
         { model with cat = Loading },
         Cmd.OfPromise.either
-            (fun () -> Lib.catBase64 (model.count.ToString()) 50)
+            (fun () -> MyJsLib.catBase64 (model.count.ToString()) 50)
             ()
             GotCat
             GotCatError
