@@ -13,9 +13,11 @@
     "Preact",
     "Vite",
     "example",
+    "Elm",
     "counter",
     "routing",
-    "subscription"
+    "subscription",
+    "decoding"
   ],
   "author": "Laurent Payot",
   "license": "MIT",
