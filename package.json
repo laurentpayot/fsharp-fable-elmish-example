@@ -4,7 +4,7 @@
   "description": "F# Fable Elmish example",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/laurentpayot/fsharp-fable-elmish-examble.git"
+    "url": "git+https://github.com/laurentpayot/fsharp-fable-elmish-example.git"
   },
   "keywords": [
     "F#",
@@ -22,9 +22,9 @@
   "author": "Laurent Payot",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/laurentpayot/fsharp-fable-elmish-examble/issues"
+    "url": "https://github.com/laurentpayot/fsharp-fable-elmish-example/issues"
   },
-  "homepage": "https://github.com/laurentpayot/fsharp-fable-elmish-examble#readme",
+  "homepage": "https://github.com/laurentpayot/fsharp-fable-elmish-example#readme",
   "type": "module",
   "scripts": {
     "restore": "dotnet tool restore && dotnet paket restore",
