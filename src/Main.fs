@@ -21,6 +21,7 @@ type Model = { pageModel: PageModel }
 
 type Flags = { count: int }
 
+
 let urlUpdate (routeOpt: Route option) (model: Model) : Model * Msg Cmd =
     match routeOpt with
 
@@ -76,12 +77,14 @@ let update (msg: Msg) (model: Model) : Model * Msg Cmd =
 
     | _ -> model, Cmd.none
 
+
 let subscriptions (model: Model) : Msg Sub =
     Sub.batch [
         match model.pageModel with
         | Time pageModel -> Sub.map "time" TimeMsg <| Pages.Time.subscriptions pageModel
         | _ -> Sub.none
     ]
+
 
 let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
     div [] [
@@ -101,6 +104,7 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
            | Counter pageModel -> Pages.Counter.view pageModel (CounterMsg >> dispatch)
            | Time pageModel -> Pages.Time.view pageModel (TimeMsg >> dispatch)
     ]
+
 
 let private startApp (flags: Flags) =
     Program.mkProgram (init flags) update view

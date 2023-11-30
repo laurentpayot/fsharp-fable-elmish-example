@@ -25,7 +25,9 @@ let decoder: Decoder<TimeRecord> =
         foo = get.Optional.Field "foo" Decode.string
     })
 
+
 let init () : Model * Msg Cmd = { time = None }, Cmd.none
+
 
 let update (msg: Msg) (model: Model) : Model * Msg Cmd =
     match msg with
@@ -40,6 +42,7 @@ let update (msg: Msg) (model: Model) : Model * Msg Cmd =
             Cmd.none
         | Error _ -> model, Cmd.none
 
+
 let view (model: Model) (dispatch: Msg -> unit) : ReactElement list = [
     h2 [] [ str "Timer" ]
     p [] [
@@ -51,6 +54,7 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement list = [
     ]
     p [] [ button [ OnClick(fun _ -> dispatch Refresh) ] [ str "Refresh" ] ]
 ]
+
 
 let onEvent (eventName: string) (toMsg: string -> Msg) : (Msg Dispatch -> IDisposable) =
     let start dispatch =

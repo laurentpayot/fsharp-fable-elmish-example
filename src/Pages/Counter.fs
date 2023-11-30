@@ -18,8 +18,10 @@ type Msg =
     | GotCat of string
     | GotCatError of exn
 
+
 let init (initialCount: int) : Model * Msg Cmd =
     { count = initialCount; cat = NotAsked }, Cmd.none
+
 
 let update (msg: Msg) (model: Model) =
     match msg with
@@ -47,7 +49,9 @@ let update (msg: Msg) (model: Model) =
     | GotCat base64 -> { model with cat = Loaded base64 }, Cmd.none
     | GotCatError err -> { model with cat = Error err }, Cmd.none
 
+
 let subscriptions (model: Model) : Msg Sub = []
+
 
 let view (model: Model) (dispatch: Msg -> unit) : ReactElement list = [
     h2 [] [ str "Counter" ]
