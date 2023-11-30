@@ -1,6 +1,6 @@
 # F# Fable Elmish example
 
-This example is written in the [F# language](https://fsharp.org/). It uses [Fable](https://fable.io/) to transpile F# to JavaScript and [Elmish](https://elmish.github.io/elmish/) to get [The Elm Architecture](https://guide.elm-lang.org/architecture/) (TEA), also known as the Model View Update (MVU) pattern.
+This example app is written in the [F# language](https://fsharp.org/). It uses [Fable](https://fable.io/) to transpile F# to JavaScript and [Elmish](https://elmish.github.io/elmish/) to get [The Elm Architecture](https://guide.elm-lang.org/architecture/) (TEA), also known as the Model View Update (MVU) pattern.
 
 Elmish normally uses [React](https://react.dev/) under the hood, but in this example React was seamlessly replaced by [Preact](https://preactjs.com/) to get similar performance to Elm, both in term of speed and bundle size.
 
@@ -23,7 +23,7 @@ To run this example app on your local machine, you will need:
 - [pnpm](https://pnpm.io/installation)
 - [Node.js](https://nodejs.org/) (can be installed via pnpm with `pnpm env use --global latest`)
 
-[Ionide](https://ionide.io/) plugin for your IDE is highly recommended.
+The [Ionide](https://ionide.io/) plugin for your IDE is highly recommended.
 
 ## Usage
 
