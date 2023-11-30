@@ -8,6 +8,7 @@ open Elmish.Navigation
 
 open Router
 
+
 type PageModel =
     | Counter of Pages.Counter.Model
     | Time of Pages.Time.Model

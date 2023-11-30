@@ -67,5 +67,4 @@ let onEvent (eventName: string) (toMsg: string -> Msg) : (Msg Dispatch -> IDispo
 
     start
 
-
 let subscriptions (model: Model) : Msg Sub = [ [ "time" ], onEvent "time" GotJsonTime ]
