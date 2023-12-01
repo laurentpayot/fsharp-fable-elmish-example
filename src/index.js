@@ -1,5 +1,4 @@
-// import { startApp } from "../output/src/Main.js"
-
+// import { startApp } from "./Main.js"
 // startApp({ count: 42 })
 
 

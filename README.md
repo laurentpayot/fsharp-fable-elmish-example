@@ -12,6 +12,7 @@ Elmish normally uses [React](https://react.dev/) under the hood, but in this exa
 - Subscription via a JavaScript custom event
 - Foreign Function Interface (FFI) using synchronous and asynchronous functions imported from JavaScript
 - JSON decoding
+- Hot Module Replacement (HMR)
 
 The only missing Elm-like feature is the [Elmish debugger](https://elmish.github.io/debugger/) that is not maintained any more and does not work with the latest Elmish versions. Fortunately you can trace the state and messages as updates happen in the browser developer console when using the development server.
 

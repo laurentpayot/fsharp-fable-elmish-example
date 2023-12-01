@@ -6,11 +6,6 @@ export default defineConfig({
     server: {
         port: 5000,
         strictPort: true,
-        // watch: {
-        //     ignored: [
-        //         "**/*.fs" // Don't watch F# files
-        //     ],
-        // },
     },
     publicDir: '../../public',
     build: {

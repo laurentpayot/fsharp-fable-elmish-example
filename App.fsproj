@@ -4,10 +4,6 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>App</RootNamespace>
-    <!-- instead of bin/ -->
-    <!-- <BaseOutputPath>c:\xyz\bin\</BaseOutputPath> -->
-    <!-- instead of obj/ -->
-    <!-- <BaseIntermediateOutputPath>some\path\</BaseIntermediateOutputPath> -->
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="src/Remote.fs" />
@@ -20,7 +16,7 @@
     <Compile Include="src/Router.fs" />
     <Compile Include="src/Main.fs" />
 
-
+    <!-- TargetPath are relative to bin/Debug/net8.0 -->
     <Content Include="src/index.html" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.html"/>
     <Content Include="src/index.js" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.js"/>
   </ItemGroup>

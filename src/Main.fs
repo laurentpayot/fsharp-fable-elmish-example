@@ -1,6 +1,5 @@
 ﻿open Fable.React
 open Fable.React.Props
-open Fable.Core.JsInterop
 open Elmish
 open Elmish.React
 open Elmish.Navigation
@@ -105,16 +104,16 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
            | Time pageModel -> Pages.Time.view pageModel (TimeMsg >> dispatch)
     ]
 
-let flags: Flags = { count = 42 }
-
-// let startApp (flags: Flags) =
-Program.mkProgram (init flags) update view
-|> Program.withSubscription subscriptions
-|> Program.toNavigable parser urlUpdate
-|> Program.withReactBatched "root"
+// startApp() is exported from the Main module
+let startApp (flags: Flags) =
+    Program.mkProgram (init flags) update view
+    |> Program.withSubscription subscriptions
+    |> Program.toNavigable parser urlUpdate
+    |> Program.withReactBatched "root"
 #if DEBUG
-|> Program.withConsoleTrace
+    |> Program.withConsoleTrace
 #endif
-|> Program.run
+    |> Program.run
 
-// importSideEffects "./index.js"
+// app started here to allow HMR
+startApp { count = 42 }
