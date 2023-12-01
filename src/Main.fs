@@ -90,7 +90,7 @@ let subscriptions (model: Model) : Msg Sub =
 let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
     div [] [
         header [] [
-            h1 [] [ str "F# Fable Elmish example!" ]
+            h1 [] [ str "F# Fable Elmish example" ]
             nav [] [
                 ul [] [
                     li [] [ a [ Href "/counter/0" ] [ str "Counter starting at 0" ] ]
