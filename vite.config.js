@@ -2,17 +2,17 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    root: './output/src', // all other paths will be relative to this directory
     server: {
         port: 5000,
         strictPort: true,
-        watch: {
-            ignored: [
-                "**/*.fs" // Don't watch F# files
-            ],
-        },
+        // watch: {
+        //     ignored: [
+        //         "**/*.fs" // Don't watch F# files
+        //     ],
+        // },
     },
-    root: './output/src',
-    publicDir: '../../public', // relative to viteConfig.root directory
+    publicDir: '../../public',
     build: {
         outDir: '../../dist',
         emptyOutDir: true,

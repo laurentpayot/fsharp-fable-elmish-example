@@ -2,7 +2,6 @@
 open Fable.React.Props
 open Fable.Core.JsInterop
 open Elmish
-open Browser.Dom
 open Elmish.React
 open Elmish.Navigation
 open Elmish.HMR // must be after all the other Elmish imports
@@ -106,9 +105,10 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
            | Time pageModel -> Pages.Time.view pageModel (TimeMsg >> dispatch)
     ]
 
+let flags: Flags = { count = 42 }
 
-// let private startApp (flags: Flags) =
-Program.mkProgram (init { count = 43 }) update view
+// let startApp (flags: Flags) =
+Program.mkProgram (init flags) update view
 |> Program.withSubscription subscriptions
 |> Program.toNavigable parser urlUpdate
 |> Program.withReactBatched "root"
@@ -117,4 +117,4 @@ Program.mkProgram (init { count = 43 }) update view
 #endif
 |> Program.run
 
-// window?startApp <- startApp
+// importSideEffects "./index.js"

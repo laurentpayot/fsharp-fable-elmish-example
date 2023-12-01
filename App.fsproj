@@ -21,8 +21,8 @@
     <Compile Include="src/Main.fs" />
 
 
-    <Content Include="src/index.html" CopyToOutputDirectory="Always" TargetPath="../../../output/src/index.html"/>
-    <Content Include="src/index.js" CopyToOutputDirectory="Always" TargetPath="../../../output/src/index.js"/>
+    <Content Include="src/index.html" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.html"/>
+    <Content Include="src/index.js" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.js"/>
   </ItemGroup>
 
   <Import Project=".paket\Paket.Restore.targets" />

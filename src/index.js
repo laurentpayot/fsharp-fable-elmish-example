@@ -1,6 +1,7 @@
-import "../output/src/Main.js"
+// import { startApp } from "../output/src/Main.js"
 
 // startApp({ count: 42 })
+
 
 function sendApp(event, payload) {
     return document.dispatchEvent(new CustomEvent(event, { detail: JSON.stringify(payload) }))
