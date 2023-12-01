@@ -5,6 +5,7 @@ open Elmish
 open Browser.Dom
 open Elmish.React
 open Elmish.Navigation
+open Elmish.HMR // must be after all the other Elmish imports
 
 open Router
 
@@ -89,7 +90,7 @@ let subscriptions (model: Model) : Msg Sub =
 let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
     div [] [
         header [] [
-            h1 [] [ str "F# Fable Elmish example" ]
+            h1 [] [ str "F# Fable Elmish example!" ]
             nav [] [
                 ul [] [
                     li [] [ a [ Href "/counter/0" ] [ str "Counter starting at 0" ] ]
@@ -106,14 +107,14 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
     ]
 
 
-let private startApp (flags: Flags) =
-    Program.mkProgram (init flags) update view
-    |> Program.withSubscription subscriptions
-    |> Program.toNavigable parser urlUpdate
-    |> Program.withReactBatched "root"
+// let private startApp (flags: Flags) =
+Program.mkProgram (init { count = 43 }) update view
+|> Program.withSubscription subscriptions
+|> Program.toNavigable parser urlUpdate
+|> Program.withReactBatched "root"
 #if DEBUG
-    |> Program.withConsoleTrace
+|> Program.withConsoleTrace
 #endif
-    |> Program.run
+|> Program.run
 
-window?startApp <- startApp
+// window?startApp <- startApp
