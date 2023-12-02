@@ -1,5 +1,7 @@
 ﻿open Fable.React
 open Fable.React.Props
+open Fable.Core.JsInterop
+open Browser.Types
 open Elmish
 open Elmish.React
 open Elmish.Navigation
@@ -86,6 +88,11 @@ let subscriptions (model: Model) : Msg Sub =
     ]
 
 
+let goToUrl (e: MouseEvent) =
+    e.preventDefault ()
+    let href: string = !!e.currentTarget?attributes?href?value
+    Navigation.modifyUrl href |> List.map (fun f -> f ignore) |> ignore
+
 let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
     div [] [
         header [] [
@@ -93,7 +100,9 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
             nav [] [
                 ul [] [
                     li [] [ a [ Href "/" ] [ str "Home" ] ]
-                    li [] [ a [ Href "/counter/0" ] [ str "Counter starting at 0" ] ]
+                    li [] [
+                        a [ Href "/counter/0"; OnClick goToUrl ] [ str "Counter starting at 0" ]
+                    ]
                     li [] [ a [ Href "/counter/50" ] [ str "Counter starting at 50" ] ]
                     li [] [ a [ Href "/time" ] [ str "Time" ] ]
                 ]
