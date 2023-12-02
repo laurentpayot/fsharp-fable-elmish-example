@@ -91,6 +91,7 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
             h1 [] [ str "F# Fable Elmish example" ]
             nav [] [
                 ul [] [
+                    li [] [ a [ Href "/" ] [ str "Home" ] ]
                     li [] [ a [ Href "/counter/0" ] [ str "Counter starting at 0" ] ]
                     li [] [ a [ Href "/counter/50" ] [ str "Counter starting at 50" ] ]
                     li [] [ a [ Href "/time" ] [ str "Time" ] ]
