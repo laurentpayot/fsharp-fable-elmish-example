@@ -42,7 +42,8 @@ let urlUpdate (routeOpt: Route option) (model: Model) : Model * Msg Cmd =
         },
         Cmd.map TimeMsg cmd
 
-    // no matching route: go home
+    // Home or no matching route
+    | Some(Home)
     | None -> model, Navigation.modifyUrl "/"
 
 
@@ -116,5 +117,6 @@ let startApp (flags: Flags) =
 #endif
     |> Program.run
 
+printfn "Starting app..."
 // app started here to allow HMR
 startApp { count = 42 }
