@@ -6,7 +6,7 @@
     <RootNamespace>App</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="src/Remote.fs" />
+    <Compile Include="src/Shared/Remote.fs" />
     <Compile Include="src/FFI/MyJsLib.fs" />
 
     <!-- PAGES -->
