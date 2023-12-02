@@ -31,3 +31,8 @@ The [Ionide](https://ionide.io/) plugin for your IDE is highly recommended.
 - `pnpm i` to install Node.js dependencies as well as F# dependencies.
 - `pnpm start` to start the Vite development server with automatic refresh on http://localhost:5000.
 - `pnpm build` to build the bundle, then `pnpm serve` to serve it as a single page application on http://localhost:5000.
+
+## TO DO
+
+- navigation without page reloads
+- tests
