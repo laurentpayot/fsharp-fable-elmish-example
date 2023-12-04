@@ -13,8 +13,7 @@ Elmish normally uses [React](https://react.dev/) under the hood, but in this exa
 - Foreign Function Interface (FFI) using synchronous and asynchronous functions imported from JavaScript
 - JSON decoding
 - Hot Module Replacement (HMR)
-
-The only missing Elm-like feature is the [Elmish debugger](https://elmish.github.io/debugger/) that is not maintained any more and does not work with the latest Elmish versions. Fortunately you can trace the state and messages as updates happen in the browser developer console when using the development server.
+- Debugger (via Redux DevTools)
 
 ## Prerequisites
 
@@ -23,6 +22,7 @@ To run this example app on your local machine, you will need:
 - [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download)
 - [pnpm](https://pnpm.io/installation)
 - [Node.js](https://nodejs.org/) (can be installed via pnpm with `pnpm env use --global latest`)
+- [Redux DevTools](https://github.com/reduxjs/redux-devtools) extension for your browser
 
 The [Ionide](https://ionide.io/) plugin for your IDE is highly recommended.
 

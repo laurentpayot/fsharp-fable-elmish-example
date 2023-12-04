@@ -5,6 +5,7 @@ open Browser.Types
 open Elmish
 open Elmish.React
 open Elmish.Navigation
+open Elmish.Debug
 open Elmish.HMR // must be after all the other Elmish imports
 
 open Router
@@ -122,7 +123,7 @@ let startApp (flags: Flags) =
     |> Program.toNavigable parser urlUpdate
     |> Program.withReactBatched "root"
 #if DEBUG
-    |> Program.withConsoleTrace
+    |> Program.withDebugger
 #endif
     |> Program.run
 

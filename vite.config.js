@@ -43,5 +43,7 @@ export default defineConfig({
             'react': 'preact/compat',
             'react-dom': 'preact/compat',
         },
-    }
+    },
+    //! Elmish Debugger remotedev dependency fix
+    define: {"global": "globalThis"}
 })
