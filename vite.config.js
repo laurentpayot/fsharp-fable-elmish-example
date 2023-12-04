@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import preact from "@preact/preset-vite"
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -37,13 +38,10 @@ export default defineConfig({
             mangle: true
         },
     },
-    plugins: [],
-    resolve: {
-        alias: {
-            'react': 'preact/compat',
-            'react-dom': 'preact/compat',
-        },
-    },
+    plugins: [
+        preact(),
+    ],
+    // reimport preact from "@preact/preset-vite"
     //! Elmish Debugger remotedev dependency fix
     define: {"global": "globalThis"}
 })
