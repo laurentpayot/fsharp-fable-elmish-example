@@ -35,4 +35,5 @@ The [Ionide](https://ionide.io/) plugin for your IDE is highly recommended.
 ## TO DO
 
 - navigation without page reloads
+- fix pages HMR
 - tests
