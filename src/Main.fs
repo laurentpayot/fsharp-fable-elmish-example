@@ -101,9 +101,7 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
             nav [] [
                 ul [] [
                     li [] [ a [ Href "/" ] [ str "Home" ] ]
-                    li [] [
-                        a [ Href "/counter/0"; OnClick goToUrl ] [ str "Counter starting at 0" ]
-                    ]
+                    li [] [ a [ Href "/counter/0" ] [ str "Counter starting at 0" ] ]
                     li [] [ a [ Href "/counter/50" ] [ str "Counter starting at 50" ] ]
                     li [] [ a [ Href "/time" ] [ str "Time" ] ]
                 ]
