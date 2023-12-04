@@ -116,6 +116,8 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
 
 // startApp() is exported from the Main module
 let startApp (flags: Flags) =
+    printfn "Starting app..."
+
     Program.mkProgram (init flags) update view
     |> Program.withSubscription subscriptions
     |> Program.toNavigable parser urlUpdate
@@ -125,6 +127,7 @@ let startApp (flags: Flags) =
 #endif
     |> Program.run
 
-printfn "Starting app..."
+#if DEBUG
 // app started here to allow HMR
 startApp { count = 42 }
+#endif

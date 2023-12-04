@@ -1,6 +1,8 @@
-// import { startApp } from "./Main.js"
-// startApp({ count: 42 })
+import { startApp } from "./Main.js"
 
+if (import.meta.env.PROD) {
+    startApp({ count: 43 })
+}
 
 function sendApp(event, payload) {
     return document.dispatchEvent(new CustomEvent(event, { detail: JSON.stringify(payload) }))
