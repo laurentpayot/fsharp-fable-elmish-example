@@ -3,7 +3,7 @@ import preact from "@preact/preset-vite"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    root: './output/src', // all other paths will be relative to this directory
+    root: './output/src', // all other paths are relative to this directory
     server: {
         port: 5000,
         strictPort: true,
@@ -31,9 +31,6 @@ export default defineConfig({
             //     unsafe_proto: true,
             //     unsafe_undefined: true,
             //     passes: 3,
-            // },
-            // mangle: {
-            //     properties: 'keep_quoted', // effective but dangerous?
             // },
             mangle: true
         },
