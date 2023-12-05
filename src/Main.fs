@@ -23,6 +23,15 @@ type Flags = { count: int }
 
 let urlUpdate (routeOpt: Route option) (model: Model) : Model * Msg Cmd =
     match routeOpt with
+    | Some(Home) ->
+        let pageModel, cmd = Pages.Counter.init 42
+
+        {
+            model with
+                pageModel = Counter pageModel
+        },
+        Cmd.map CounterMsg cmd
+
 
     | Some(Route.Counter count) ->
         let pageModel, cmd = Pages.Counter.init count
@@ -42,9 +51,8 @@ let urlUpdate (routeOpt: Route option) (model: Model) : Model * Msg Cmd =
         },
         Cmd.map TimeMsg cmd
 
-    // Home or no matching route
-    | Some(Home)
-    | None -> model, Navigation.modifyUrl "/"
+    // no matching route
+    | None -> model, Navigation.newUrl "/"
 
 
 let init (flags: Flags) (routeOpt: Route option) : Model * Msg Cmd =
