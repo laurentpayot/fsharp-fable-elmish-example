@@ -35,4 +35,5 @@ The [Ionide](https://ionide.io/) plugin for your IDE is highly recommended.
 ## TO DO
 
 - navigation without page reloads
+- lazy views https://elmish.github.io/react/#lazy-views
 - tests
