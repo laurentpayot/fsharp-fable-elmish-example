@@ -12,16 +12,16 @@ dependencies:
 devDependencies:
   '@preact/preset-vite':
     specifier: ^2.7.0
-    version: 2.7.0(@babel/core@7.23.5)(preact@10.19.2)(vite@5.0.4)
+    version: 2.7.0(@babel/core@7.23.5)(preact@10.19.2)(vite@5.0.5)
   remotedev:
     specifier: ^0.2.9
     version: 0.2.9
   terser:
-    specifier: ^5.24.0
-    version: 5.24.0
+    specifier: ^5.25.0
+    version: 5.25.0
   vite:
-    specifier: ^5.0.4
-    version: 5.0.4(terser@5.24.0)
+    specifier: ^5.0.5
+    version: 5.0.5(terser@5.25.0)
 
 packages:
 
@@ -505,7 +505,7 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@preact/preset-vite@2.7.0(@babel/core@7.23.5)(preact@10.19.2)(vite@5.0.4):
+  /@preact/preset-vite@2.7.0(@babel/core@7.23.5)(preact@10.19.2)(vite@5.0.5):
     resolution: {integrity: sha512-m5N0FVtxbCCDxNk55NGhsRpKJChYcupcuQHzMJc/Bll07IKZKn8amwYciyKFS9haU6AgzDAJ/ewvApr6Qg1DHw==}
     peerDependencies:
       '@babel/core': 7.x
@@ -514,13 +514,13 @@ packages:
       '@babel/core': 7.23.5
       '@babel/plugin-transform-react-jsx': 7.23.4(@babel/core@7.23.5)
       '@babel/plugin-transform-react-jsx-development': 7.22.5(@babel/core@7.23.5)
-      '@prefresh/vite': 2.4.4(preact@10.19.2)(vite@5.0.4)
+      '@prefresh/vite': 2.4.4(preact@10.19.2)(vite@5.0.5)
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.23.5)
       debug: 4.3.4
       kolorist: 1.8.0
       resolve: 1.22.8
-      vite: 5.0.4(terser@5.24.0)
+      vite: 5.0.5(terser@5.25.0)
     transitivePeerDependencies:
       - preact
       - supports-color
@@ -542,7 +542,7 @@ packages:
     resolution: {integrity: sha512-KtC/fZw+oqtwOLUFM9UtiitB0JsVX0zLKNyRTA332sqREqSALIIQQxdUCS1P3xR/jT1e2e8/5rwH6gdcMLEmsQ==}
     dev: true
 
-  /@prefresh/vite@2.4.4(preact@10.19.2)(vite@5.0.4):
+  /@prefresh/vite@2.4.4(preact@10.19.2)(vite@5.0.5):
     resolution: {integrity: sha512-7jcz3j5pXufOWTjl31n0Lc3BcU8oGoacoaWx/Ur1QJ+fd4Xu0G7g/ER1xV02x7DCiVoFi7xtSgaophOXoJvpmA==}
     peerDependencies:
       preact: ^10.4.0
@@ -554,7 +554,7 @@ packages:
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
       preact: 10.19.2
-      vite: 5.0.4(terser@5.24.0)
+      vite: 5.0.5(terser@5.25.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -698,7 +698,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001566
-      electron-to-chromium: 1.4.601
+      electron-to-chromium: 1.4.603
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
     dev: true
@@ -759,8 +759,8 @@ packages:
       ms: 2.1.2
     dev: true
 
-  /electron-to-chromium@1.4.601:
-    resolution: {integrity: sha512-SpwUMDWe9tQu8JX5QCO1+p/hChAi9AE9UpoC3rcHVc+gdCGlbT3SGb5I1klgb952HRIyvt9wZhSz9bNBYz9swA==}
+  /electron-to-chromium@1.4.603:
+    resolution: {integrity: sha512-Dvo5OGjnl7AZTU632dFJtWj0uJK835eeOVQIuRcmBmsFsTNn3cL05FqOyHAfGQDIoHfLhyJ1Tya3PJ0ceMz54g==}
     dev: true
 
   /esbuild@0.19.8:
@@ -908,8 +908,8 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /postcss@8.4.31:
-    resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
+  /postcss@8.4.32:
+    resolution: {integrity: sha512-D/kj5JNu6oo2EIy+XL/26JEDTlIbB8hw85G8StOE6L74RQAVVP5rej6wxCNqyMbR4RkPfqvezVbPw81Ngd6Kcw==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.7
@@ -1043,8 +1043,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /terser@5.24.0:
-    resolution: {integrity: sha512-ZpGR4Hy3+wBEzVEnHvstMvqpD/nABNelQn/z2r0fjVWGQsN3bpOLzQlqDxmb4CDZnXq5lpjnQ+mHQLAOpfM5iw==}
+  /terser@5.25.0:
+    resolution: {integrity: sha512-we0I9SIsfvNUMP77zC9HG+MylwYYsGFSBG8qm+13oud2Yh+O104y614FRbyjpxys16jZwot72Fpi827YvGzuqg==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -1076,8 +1076,8 @@ packages:
     hasBin: true
     dev: true
 
-  /vite@5.0.4(terser@5.24.0):
-    resolution: {integrity: sha512-RzAr8LSvM8lmhB4tQ5OPcBhpjOZRZjuxv9zO5UcxeoY2bd3kP3Ticd40Qma9/BqZ8JS96Ll/jeBX9u+LJZrhVg==}
+  /vite@5.0.5(terser@5.25.0):
+    resolution: {integrity: sha512-OekeWqR9Ls56f3zd4CaxzbbS11gqYkEiBtnWFFgYR2WV8oPJRRKq0mpskYy/XaoCL3L7VINDhqqOMNDiYdGvGg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -1105,9 +1105,9 @@ packages:
         optional: true
     dependencies:
       esbuild: 0.19.8
-      postcss: 8.4.31
+      postcss: 8.4.32
       rollup: 4.6.1
-      terser: 5.24.0
+      terser: 5.25.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
