@@ -8,7 +8,7 @@ open Elmish.Navigation
 open Elmish.Debug
 open Elmish.HMR // must be after all the other Elmish imports
 
-open Router
+open Route
 
 
 type PageModel =
