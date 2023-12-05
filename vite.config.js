@@ -36,7 +36,7 @@ export default defineConfig({
         },
     },
     plugins: [
-        preact(),
+        preact({ prefreshEnabled: false }),
     ],
     // reimport preact from "@preact/preset-vite"
     //! Elmish Debugger remotedev dependency fix
