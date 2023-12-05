@@ -30,4 +30,4 @@ let linkTo (route: Route) (props: IHTMLProp list) (children: ReactElement list) 
             e.preventDefault ()
             Navigation.newUrl href |> List.map (fun f -> f ignore) |> ignore)
 
-    (a ((Href href) :: onClick :: props) children)
+    a (Href href :: onClick :: props) children
