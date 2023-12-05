@@ -22,7 +22,7 @@ To run this example app on your local machine, you will need:
 - [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download)
 - [pnpm](https://pnpm.io/installation)
 - [Node.js](https://nodejs.org/) (can be installed via pnpm with `pnpm env use --global latest`)
-- [Redux DevTools](https://github.com/reduxjs/redux-devtools) extension for your browser
+- [Redux DevTools](https://github.com/reduxjs/redux-devtools) browser extension for the debugger, and maybe [Preact DevTools](https://preactjs.github.io/preact-devtools/) if you wish to inspect the rendering itself.
 
 The [Ionide](https://ionide.io/) plugin for your IDE is highly recommended.
 
