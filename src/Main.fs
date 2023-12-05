@@ -1,5 +1,4 @@
 ﻿open Fable.React
-open Fable.React.Props
 open Elmish
 open Elmish.React
 open Elmish.Navigation
@@ -86,21 +85,16 @@ let subscriptions (model: Model) : Msg Sub =
         | _ -> Sub.none
     ]
 
-
 let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
     div [] [
         header [] [
             h1 [] [ str "F# Fable Elmish example" ]
             nav [] [
                 ul [] [
-                    li [] [ a [ Href "/"; OnClick goToHref ] [ str "Home" ] ]
-                    li [] [
-                        a [ Href "/counter/0"; OnClick goToHref ] [ str "Counter starting at 0" ]
-                    ]
-                    li [] [
-                        a [ Href "/counter/50"; OnClick goToHref ] [ str "Counter starting at 50" ]
-                    ]
-                    li [] [ a [ Href "/time"; OnClick goToHref ] [ str "Time" ] ]
+                    li [] [ linkTo Home [] [ str "Home" ] ]
+                    li [] [ linkTo (Route.Counter 0) [] [ str "Counter starting at 0" ] ]
+                    li [] [ linkTo (Route.Counter 50) [] [ str "Counter starting at 50" ] ]
+                    li [] [ linkTo Route.Time [] [ str "Time" ] ]
                 ]
             ]
             hr []

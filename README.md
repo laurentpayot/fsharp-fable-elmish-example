@@ -35,5 +35,4 @@ The [Ionide](https://ionide.io/) plugin for your IDE is highly recommended.
 ## TO DO
 
 - lazy views https://elmish.github.io/react/#lazy-views
-- navigation using routes instead of hrefs
 - tests
