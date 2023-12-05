@@ -30,8 +30,9 @@
     "restore": "dotnet tool restore && dotnet paket restore",
     "postinstall": "pnpm restore",
     "test": "pnpm test",
-    "start": "dotnet fable watch --outDir output --sourceMaps --run pnpm vite",
-    "build": "dotnet fable --outDir output --run pnpm vite build",
+    "cleanup": "rm -rf output",
+    "start": "pnpm cleanup && dotnet fable watch --outDir output --sourceMaps --run pnpm vite",
+    "build": "pnpm cleanup && dotnet fable --outDir output --run pnpm vite build",
     "serve": "pnpm dlx http-server dist -a localhost --port 5000 --proxy http://localhost:5000?",
     "do-update": "pnpm update --latest && dotnet paket update"
   },
