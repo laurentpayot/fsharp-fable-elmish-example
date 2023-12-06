@@ -44,7 +44,7 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement list = [
         | [] -> "Waiting for time…"
         | time :: _ -> time
 
-    h2 [] [ str "Timer" ]
+    h2 [] [ str "Time" ]
     p [] [ strong [] [ str lastTime ] ]
 
     p [] [
