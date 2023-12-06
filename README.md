@@ -12,6 +12,7 @@ Elmish normally uses [React](https://react.dev/) under the hood, but in this exa
 - Subscription via a JavaScript custom event
 - Foreign Function Interface (FFI) using synchronous and asynchronous functions imported from JavaScript
 - JSON decoding
+- Keyed list
 - Hot Module Replacement (HMR)
 - Debugger (via Redux DevTools)
 
