@@ -9,11 +9,9 @@ open System
 open Thoth.Json
 
 
-type Model = { time: string option }
+type Model = { times: string list }
 
-type Msg =
-    | Refresh
-    | GotJsonTime of string
+type Msg = GotJsonTime of string
 
 type TimeRecord = { time: string; foo: string option }
 
@@ -24,33 +22,31 @@ let decoder: Decoder<TimeRecord> =
     })
 
 
-let init () : Model * Msg Cmd = { time = None }, Cmd.none
+let init () : Model * Msg Cmd = { times = [] }, Cmd.none
 
 
 let update (msg: Msg) (model: Model) : Model * Msg Cmd =
     match msg with
-    | Refresh -> model, Cmd.none
     | GotJsonTime str ->
         match Decode.fromString decoder str with
         | Ok timeRecord ->
             {
                 model with
-                    time = Some timeRecord.time
+                    times = timeRecord.time :: model.times
             },
             Cmd.none
         | Error _ -> model, Cmd.none
 
 
 let view (model: Model) (dispatch: Msg -> unit) : ReactElement list = [
+    let lastTime =
+        match model.times with
+        | [] -> "Waiting for time…"
+        | time :: _ -> time
+
     h2 [] [ str "Timer" ]
-    p [] [
-        str
-        <| if model.time = None then
-               "Waiting for time..."
-           else
-               model.time.Value
-    ]
-    p [] [ button [ OnClick(fun _ -> dispatch Refresh) ] [ str "Refresh" ] ]
+    p [] [ strong [] [ str lastTime ] ]
+    p [] [ ul [] [ for time in model.times -> li [ Key time ] [ str time ] ] ]
 ]
 
 
