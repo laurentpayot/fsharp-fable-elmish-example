@@ -115,9 +115,7 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
 
 // startApp() is exported from the Main module
 let startApp (flags: Flags) =
-    printfn "Starting app..."
-
-    Program.mkProgram (init flags) update view
+    Program.mkProgram (init flags) update (lazyView2 view)
     |> Program.withSubscription subscriptions
     |> Program.toNavigable parser urlUpdate
     |> Program.withReactBatched "root"
@@ -125,6 +123,8 @@ let startApp (flags: Flags) =
     |> Program.withDebugger
 #endif
     |> Program.run
+
+    printfn "App started."
 
 #if DEBUG
 // app started here to allow HMR
