@@ -2,11 +2,10 @@
 
 open Fable.React
 open Fable.React.Props
-open Fable.Core.JsInterop
 open Elmish
-open Browser.Dom
-open System
 open Thoth.Json
+
+open OnEvent
 
 
 type Model = { times: string list }
@@ -52,20 +51,5 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement list = [
     ]
 ]
 
-
-let onEvent (eventName: string) (toMsg: string -> Msg) : (Msg Dispatch -> IDisposable) =
-    let start dispatch =
-        document.addEventListener (
-            eventName,
-            (fun event -> dispatch (toMsg <| event?detail)),
-            false
-        )
-
-        { new IDisposable with
-            member _.Dispose() =
-                document.removeEventListener (eventName, (fun _ -> ()))
-        }
-
-    start
 
 let subscriptions (model: Model) : Msg Sub = [ [ "time" ], onEvent "time" GotJsonTime ]

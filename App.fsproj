@@ -6,8 +6,10 @@
     <RootNamespace>App</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+
     <!-- SHARED -->
     <Compile Include="src/Shared/Route.fs" />
+    <Compile Include="src/Shared/OnEvent.fs" />
     <Compile Include="src/Shared/Remote.fs" />
     <Compile Include="src/FFI/MyJsLib.fs" />
 
@@ -16,11 +18,9 @@
     <Compile Include="src/Pages/Time.fs" />
 
     <Compile Include="src/Main.fs" />
-
     <!-- TargetPath are relative to bin/Debug/net8.0 -->
-    <Content Include="src/index.html" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.html"/>
-    <Content Include="src/index.js" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.js"/>
+    <Content Include="src/index.html" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.html" />
+    <Content Include="src/index.js" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.js" />
   </ItemGroup>
-
   <Import Project=".paket\Paket.Restore.targets" />
 </Project>
