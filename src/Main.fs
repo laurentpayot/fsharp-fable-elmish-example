@@ -1,4 +1,5 @@
-﻿open Fable.React
+﻿open Fable.Core.JsInterop
+open Fable.React
 open Elmish
 open Elmish.React
 open Elmish.Navigation
@@ -6,6 +7,8 @@ open Elmish.Debug
 open Elmish.HMR // must be after all the other Elmish imports
 
 open Route
+
+importSideEffects "./index.css"
 
 
 type PageModel =

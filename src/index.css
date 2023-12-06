@@ -1,0 +1,7 @@
+.times li {
+    list-style: none;
+}
+
+.times li::before {
+    content: '⌚';
+}

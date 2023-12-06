@@ -46,7 +46,10 @@ let view (model: Model) (dispatch: Msg -> unit) : ReactElement list = [
 
     h2 [] [ str "Timer" ]
     p [] [ strong [] [ str lastTime ] ]
-    p [] [ ul [] [ for time in model.times -> li [ Key time ] [ str time ] ] ]
+
+    p [] [
+        ul [ ClassName "times" ] [ for time in model.times -> li [ Key time ] [ str time ] ]
+    ]
 ]
 
 
