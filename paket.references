@@ -7,3 +7,7 @@ Fable.React
 Thoth.Json
 Fable.Elmish.HMR
 Fable.Elmish.Debugger
+Microsoft.NET.Test.Sdk
+xunit
+xunit.runner.visualstudio
+coverlet.collector

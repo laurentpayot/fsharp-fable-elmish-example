@@ -1,4 +1,6 @@
-﻿open Fable.Core.JsInterop
+﻿module Main
+
+open Fable.Core.JsInterop
 open Fable.React
 open Elmish
 open Elmish.React
