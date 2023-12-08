@@ -21,6 +21,10 @@
     <!-- TargetPath are relative to bin/Debug/net8.0 -->
     <Content Include="src/index.html" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.html" />
     <Content Include="src/index.js" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.js" />
+
+    <!-- TESTS -->
+    <Compile Include="tests/Route.fs" />
+    <!-- <Compile Include="tests/Program.fs" /> -->
   </ItemGroup>
   <Import Project=".paket\Paket.Restore.targets" />
 </Project>
