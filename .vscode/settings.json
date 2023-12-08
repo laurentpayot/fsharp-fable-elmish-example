@@ -5,7 +5,8 @@
         "Elmish",
         "fantomas",
         "Ionide",
-        "paket"
+        "paket",
+        "Xunit"
     ],
     "[fsharp]": {
         "editor.formatOnSave": true,
