@@ -24,7 +24,6 @@
 
     <!-- TESTS -->
     <Compile Include="tests/Route.fs" />
-    <!-- <Compile Include="tests/Program.fs" /> -->
   </ItemGroup>
   <Import Project=".paket\Paket.Restore.targets" />
 </Project>
