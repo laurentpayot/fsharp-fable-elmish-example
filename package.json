@@ -29,7 +29,7 @@
   "scripts": {
     "restore": "dotnet tool restore && dotnet paket restore",
     "postinstall": "pnpm restore",
-    "test": "pnpm test",
+    "test": "dotnet test tests/tests.fsproj",
     "cleanup": "rm -rf output",
     "start": "pnpm cleanup && dotnet fable watch --outDir output --sourceMaps --run pnpm vite",
     "build": "pnpm cleanup && dotnet fable --outDir output --run pnpm vite build",

@@ -6,6 +6,7 @@
         "fantomas",
         "Ionide",
         "paket",
+        "remotedev",
         "Xunit"
     ],
     "[fsharp]": {
