@@ -6,4 +6,4 @@ open Route
 
 
 [<Fact>]
-let ``MyJsLib test`` () = Assert.True(toString Home = "/")
+let ``Home test`` () = Assert.True(toString Home = "/")
