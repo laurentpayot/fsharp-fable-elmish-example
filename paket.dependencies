@@ -12,4 +12,4 @@ nuget Fable.React
 nuget Microsoft.NET.Test.Sdk
 nuget Thoth.Json
 nuget xunit
-nuget xunit.runner.visualstudio
+nuget xunit.runner.visualstudio >= 2.0 version_in_path: true // https://github.com/xunit/xunit/issues/1521#issuecomment-337556655
