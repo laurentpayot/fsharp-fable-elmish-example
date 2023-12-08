@@ -1,15 +1,23 @@
-module Tests
+namespace Tests.Route
 
 open Xunit
 
 open Route
 
 
-type ``toString tests``() =
+module ``toString tests`` =
 
-    [<Fact>]
-    let ``Home`` () = Assert.True(toString Home = "/")
+    module ``Home`` =
 
-    [<Fact>]
-    let ``Counter 0`` () =
-        Assert.True(toString (Counter 0) = "/counter/0")
+        [<Fact>]
+        let ``Home`` () = Assert.True(toString Home = "/")
+
+
+    module ``Counter`` =
+        [<Fact>]
+        let ``Counter 0`` () =
+            Assert.True(toString (Counter 0) = "/counter/0")
+
+        [<Fact>]
+        let ``Counter 1`` () =
+            Assert.True(toString (Counter 1) = "/counter/1")
