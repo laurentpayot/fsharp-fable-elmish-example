@@ -29,10 +29,10 @@
   "scripts": {
     "restore": "dotnet tool restore && dotnet paket restore",
     "postinstall": "pnpm restore",
-    "test": "dotnet test -e TEST=1",
+    "test": "dotnet test",
     "cleanup": "rm -rf output",
-    "start": "pnpm cleanup && dotnet fable watch --outDir output --sourceMaps --run pnpm vite",
-    "build": "pnpm cleanup && dotnet fable --outDir output --run pnpm vite build",
+    "start": "pnpm cleanup && dotnet fable watch --outDir output --sourceMaps --define VITE=1 --run pnpm vite",
+    "build": "pnpm cleanup && dotnet fable --outDir output --define VITE=1 --run pnpm vite build",
     "size:brotli": "echo \"JS size: `brotli -Zcn dist/assets/index-*.js | wc -c | numfmt --to=iec` brotli compressed\"",
     "serve": "pnpm dlx http-server dist -a localhost --port 5000 --proxy http://localhost:5000?",
     "do-update": "pnpm update --latest && dotnet paket update"
