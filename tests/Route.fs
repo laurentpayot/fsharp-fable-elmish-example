@@ -1,6 +1,7 @@
 namespace Tests.Route
 
 open Xunit
+open FsUnit.Xunit
 
 open Route
 
@@ -10,14 +11,14 @@ module ``toString tests`` =
     module ``Home`` =
 
         [<Fact>]
-        let ``Home`` () = Assert.True(toString Home = "/")
+        let ``Home`` () = toString Home |> should equal "/"
 
 
     module ``Counter`` =
         [<Fact>]
         let ``Counter 0`` () =
-            Assert.True(toString (Counter 0) = "/counter/0")
+            toString (Counter 0) |> should equal "/counter/0"
 
         [<Fact>]
         let ``Counter 1`` () =
-            Assert.True(toString (Counter 1) = "/counter/1")
+            toString (Counter 1) |> should equal "/counter/1"
