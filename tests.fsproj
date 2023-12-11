@@ -9,8 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="tests/**/*.fs" />
-    <!-- instead of dedicated file for entry point -->
-    <Compile Include="src/Main.fs" />
+    <Compile Include="tests.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="App.fsproj" />
