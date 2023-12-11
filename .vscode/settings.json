@@ -9,11 +9,23 @@
         "remotedev",
         "Xunit"
     ],
+    "testExplorer.hideWhen": "noTests",
     "[fsharp]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "Ionide.Ionide-fsharp",
         "editor.inlayHints.enabled": "offUnlessPressed",
     },
     "FSharp.showExplorerOnStartup": false,
-    "testExplorer.hideWhen": "noTests",
+    "FSharp.excludeProjectDirectories": [
+		".git",
+        ".config",
+		".paket",
+        ".vscode",
+		"bin",
+		"dist",
+		"node_modules",
+		"obj",
+		"output",
+		"paket-files",
+	],
 }
