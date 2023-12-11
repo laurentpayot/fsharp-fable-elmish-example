@@ -15,4 +15,5 @@
         "editor.inlayHints.enabled": "offUnlessPressed",
     },
     "FSharp.showExplorerOnStartup": false,
+    "testExplorer.hideWhen": "noTests",
 }
