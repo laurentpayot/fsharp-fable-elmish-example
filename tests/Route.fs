@@ -1,4 +1,4 @@
-namespace App.Tests.Route
+namespace ``Route tests``
 
 open Xunit
 open FsUnit.Xunit
