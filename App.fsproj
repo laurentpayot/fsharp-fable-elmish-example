@@ -15,9 +15,5 @@
     <Content Include="src/index.html" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.html" />
     <Content Include="src/index.js" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.js" />
   </ItemGroup>
-  <!-- condition needed by FsUnit -->
-  <ItemGroup Condition="'$(VITE)'!='1' And '$(VITE)'!='true'">
-    <Compile Include="tests/**/*.fs" />
-  </ItemGroup>
   <Import Project=".paket\Paket.Restore.targets" />
 </Project>
