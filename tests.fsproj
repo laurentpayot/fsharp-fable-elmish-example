@@ -9,10 +9,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="tests/**/*.fs" />
-    <Compile Include="tests.fs" />
+    <Compile Include="Tests.fs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="App.fsproj" />
+    <ProjectReference Include="app.fsproj" />
   </ItemGroup>
   <Import Project=".paket\Paket.Restore.targets" />
 </Project>
