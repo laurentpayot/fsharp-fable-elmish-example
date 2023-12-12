@@ -37,19 +37,19 @@ let update (msg: Msg) (model: Model) : Model * Msg Cmd =
         | Error _ -> model, Cmd.none
 
 
-let view (model: Model) (dispatch: Msg -> unit) : ReactElement list = [
+let view (model: Model) (dispatch: Msg -> unit) : ReactElement list =
     let lastTime =
         match model.times with
         | [] -> "Waiting for time…"
         | time :: _ -> time
 
-    h2 [] [ str "Time" ]
-    p [] [ strong [] [ str lastTime ] ]
-
-    p [] [
-        ul [ ClassName "times" ] [ for time in model.times -> li [ Key time ] [ str time ] ]
+    [
+        h2 [] [ str "Time" ]
+        p [] [ strong [] [ str lastTime ] ]
+        p [] [
+            ul [ ClassName "times" ] [ for time in model.times -> li [ Key time ] [ str time ] ]
+        ]
     ]
-]
 
 
 let subscriptions (model: Model) : Msg Sub = [ [ "time" ], onEvent "time" GotJsonTime ]
