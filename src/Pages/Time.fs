@@ -37,7 +37,7 @@ let update (msg: Msg) (model: Model) : Model * Msg Cmd =
         | Error _ -> model, Cmd.none
 
 
-let view (model: Model) (dispatch: Msg -> unit) : ReactElement list =
+let view (model: Model) (dispatch: Msg Dispatch) : ReactElement list =
     let lastTime =
         match model.times with
         | [] -> "Waiting for time…"

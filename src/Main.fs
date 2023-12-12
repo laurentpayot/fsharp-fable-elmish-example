@@ -98,7 +98,7 @@ let subscriptions (model: Model) : Msg Sub =
         | _ -> Sub.none
     ]
 
-let view (model: Model) (dispatch: Msg -> unit) : ReactElement =
+let view (model: Model) (dispatch: Msg Dispatch) : ReactElement =
     div [] [
         header [] [
             h1 [] [ str "F# Fable Elmish example" ]

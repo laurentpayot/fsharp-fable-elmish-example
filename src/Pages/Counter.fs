@@ -53,7 +53,7 @@ let update (msg: Msg) (model: Model) =
 let subscriptions (model: Model) : Msg Sub = []
 
 
-let view (model: Model) (dispatch: Msg -> unit) : ReactElement list = [
+let view (model: Model) (dispatch: Msg Dispatch) : ReactElement list = [
     h2 [] [ str "Counter" ]
     p [] [
         button [ OnClick(fun _ -> dispatch Decrement) ] [ str "-" ]
