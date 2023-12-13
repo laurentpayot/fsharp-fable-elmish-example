@@ -12,3 +12,7 @@ dist/
 
 # Paket dependency manager
 paket-files/
+
+
+#Direnv
+.direnv/
