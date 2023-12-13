@@ -14,5 +14,5 @@ dist/
 paket-files/
 
 
-#Direnv
+# Direnv
 .direnv/

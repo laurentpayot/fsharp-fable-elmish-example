@@ -34,7 +34,9 @@ color="always"
               '';
 	    };
 	  in
-	  ''
+	    ''
+mkdir -p .direnv
+touch .direnv/paket.dependencies
 cat ${npmrc} > .npmrc
 	  '';
         };
