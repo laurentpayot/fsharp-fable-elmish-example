@@ -2,12 +2,6 @@
   "version": 1,
   "isRoot": true,
   "tools": {
-    "fable": {
-      "version": "4.7.0",
-      "commands": [
-        "fable"
-      ]
-    },
     "fantomas": {
       "version": "6.2.3",
       "commands": [
@@ -18,6 +12,12 @@
       "version": "8.0.0",
       "commands": [
         "paket"
+      ]
+    },
+    "fable": {
+      "version": "4.8.1",
+      "commands": [
+        "fable"
       ]
     }
   }
