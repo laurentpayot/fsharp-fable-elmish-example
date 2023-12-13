@@ -12,7 +12,7 @@
     <Compile Include="src/Shared/**/*.fs" />
     <Compile Include="src/Pages/**/*.fs" />
     <Compile Include="src/Main.fs" />
-    <!-- TargetPath are relative to bin/Debug/net8.0 -->
+    <!-- TargetPath are relative to bin/Debug/net8.0/ -->
     <Content Include="src/index.html" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.html" />
     <Content Include="src/index.js" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.js" />
   </ItemGroup>
