@@ -1,7 +1,7 @@
 {
   "name": "fsharp-fable-elmish-example",
   "version": "0.0.1",
-  "description": "F# Fable Elmish example",
+  "description": "F# Fable Elmish example, with Preact and Vite.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/laurentpayot/fsharp-fable-elmish-example.git"
