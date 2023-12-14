@@ -27,8 +27,8 @@
   "homepage": "https://github.com/laurentpayot/fsharp-fable-elmish-example#readme",
   "type": "module",
   "scripts": {
-    "restore": "dotnet tool restore && dotnet paket restore",
-    "postinstall": "pnpm restore",
+    "restore": "dotnet tool restore && dotnet paket restore && dotnet paket install",
+    "postinstall": "pnpm restore && rm -rf obj/",
     "test": "dotnet test tests.fsproj",
     "cleanup": "rm -rf output/src",
     "start": "pnpm cleanup && dotnet fable watch app.fsproj --outDir output --sourceMaps --run pnpm vite",
