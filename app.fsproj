@@ -16,5 +16,5 @@
     <Content Include="src/index.html" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../src/index.html" />
     <Content Include="src/index.js" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../src/index.js" />
   </ItemGroup>
-  <Import Project=".paket/Paket.Restore.targets" />
+  <Import Project=".paket\Paket.Restore.targets" />
 </Project>

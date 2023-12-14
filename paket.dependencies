@@ -1,16 +1,19 @@
 source https://api.nuget.org/v3/index.json
-
 storage: none
-nuget Fable.Browser.Dom
+
+// app
 nuget Fable.Core // waiting for https://github.com/fable-compiler/Fable/issues/3614
+nuget Fable.Browser.Dom
 nuget Fable.Elmish
 nuget Fable.Elmish.Browser
 nuget Fable.Elmish.Debugger
 nuget Fable.Elmish.HMR
 nuget Fable.Elmish.React
 nuget Fable.React
-nuget FsUnit.xUnit
-nuget Microsoft.NET.Test.Sdk
 nuget Thoth.Json
+
+// tests
+nuget Microsoft.NET.Test.Sdk
 nuget xunit
 nuget xunit.runner.visualstudio >= 2.0 version_in_path: true // https://github.com/xunit/xunit/issues/1521#issuecomment-337556655
+nuget FsUnit.xUnit
