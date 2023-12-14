@@ -25,8 +25,9 @@ To run this example app on your local machine, you will need:
 - [pnpm](https://pnpm.io/installation)
 - [Node.js](https://nodejs.org/) (can be installed via pnpm with `pnpm env use --global latest`)
 - [Redux DevTools](https://github.com/reduxjs/redux-devtools) browser extension for the debugger, and maybe [Preact DevTools](https://preactjs.github.io/preact-devtools/) if you wish to inspect the rendering itself.
+- [Ionide](https://ionide.io/) plugin for your IDE is highly recommended.
 
-The [Ionide](https://ionide.io/) plugin for your IDE is highly recommended.
+If you want to leverage Nix flakes and direnv to automatically setup the project environment, have a look at the [PR](https://github.com/laurentpayot/fsharp-fable-elmish-example/pull/1/files) by [@damien-biasotto](https://github.com/damien-biasotto).
 
 ## Usage
 
