@@ -30,7 +30,7 @@
     "restore": "dotnet tool restore && dotnet paket restore",
     "postinstall": "pnpm restore",
     "test": "dotnet test tests.fsproj",
-    "cleanup": "rm -rf output",
+    "cleanup": "rm -rf output/src",
     "start": "pnpm cleanup && dotnet fable watch app.fsproj --outDir output --sourceMaps --run pnpm vite",
     "build": "pnpm cleanup && dotnet fable app.fsproj --outDir output --run pnpm vite build",
     "size:brotli": "echo \"JS size: `brotli -Zcn dist/assets/index-*.js | wc -c | numfmt --to=iec` brotli compressed\"",

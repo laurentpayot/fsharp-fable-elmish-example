@@ -3,12 +3,12 @@
 bin/
 obj/
 
-# npm
+# Node package manager
 node_modules/
-
-# Vite
-output/
-dist/
 
 # Paket dependency manager
 paket-files/
+
+# Vite
+/output/
+/dist/

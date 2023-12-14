@@ -4,7 +4,6 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>App</RootNamespace>
-    <IsTestProject>false</IsTestProject>
   </PropertyGroup>
   <ItemGroup>
     <!-- order is important -->
@@ -12,9 +11,9 @@
     <Compile Include="src/Shared/**/*.fs" />
     <Compile Include="src/Pages/**/*.fs" />
     <Compile Include="src/Main.fs" />
-    <!-- TargetPath are relative to bin/Debug/net8.0/ -->
-    <Content Include="src/index.html" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.html" />
-    <Content Include="src/index.js" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../output/src/index.js" />
+    <!-- TargetPath are relative to output/bin/Debug/net8.0/ -->
+    <Content Include="src/index.html" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../src/index.html" />
+    <Content Include="src/index.js" CopyToOutputDirectory="PreserveNewest" TargetPath="../../../src/index.js" />
   </ItemGroup>
-  <Import Project=".paket\Paket.Restore.targets" />
+  <Import Project=".paket/Paket.Restore.targets" />
 </Project>
