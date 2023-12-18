@@ -6,16 +6,17 @@ Elmish normally uses [React](https://react.dev/) under the hood, but in this exa
 
 ## Featuring
 
-- Startup flags
-- Getting a random number
-- Routing
-- Subscription via a JavaScript custom event
-- Foreign Function Interface (FFI) using synchronous and asynchronous functions imported from JavaScript
-- JSON decoding
-- Keyed list
-- Unit tests
-- Hot Module Replacement (HMR)
-- Debugger (via Redux DevTools)
+- [x] Startup flags
+- [x] Getting a random number
+- [x] Routing
+- [x] Subscription via a JavaScript custom event
+- [x] Foreign Function Interface (FFI) using synchronous and asynchronous functions imported from JavaScript
+- [x] JSON decoding
+- [x] Keyed list
+- [x] Unit tests
+- [ ] [Composable forms](https://mangelmaxime.github.io/Fable.Form/)
+- [x] Hot Module Replacement (HMR)
+- [x] Debugger (via Redux DevTools)
 
 ## Prerequisites
 
