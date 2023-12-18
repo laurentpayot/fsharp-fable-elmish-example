@@ -31,8 +31,8 @@
     "postinstall": "pnpm restore && rm -rf obj/",
     "test": "dotnet test tests.fsproj",
     "cleanup": "rm -rf output/src",
-    "start": "pnpm cleanup && dotnet fable watch app.fsproj --outDir output --sourceMaps --run pnpm vite",
-    "build": "pnpm cleanup && dotnet fable app.fsproj --outDir output --run pnpm vite build",
+    "start": "dotnet fable watch app.fsproj --outDir output --sourceMaps --run pnpm vite",
+    "build": "dotnet fable app.fsproj --outDir output --run pnpm vite build",
     "size:brotli": "echo \"JS size: `brotli -Zcn dist/assets/index-*.js | wc -c | numfmt --to=iec` brotli compressed\"",
     "serve": "pnpm dlx http-server dist -a localhost --port 5000 --proxy http://localhost:5000?",
     "do-update": "pnpm update --latest && dotnet paket update"
