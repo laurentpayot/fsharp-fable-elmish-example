@@ -13,8 +13,8 @@ Elmish normally uses [React](https://react.dev/) under the hood, but in this exa
 - [x] Foreign Function Interface (FFI) using synchronous and asynchronous functions imported from JavaScript
 - [x] JSON decoding
 - [x] Keyed list
-- [x] Unit tests
 - [ ] [Composable forms](https://mangelmaxime.github.io/Fable.Form/)
+- [x] Unit tests
 - [x] Hot Module Replacement (HMR)
 - [x] Debugger (via Redux DevTools)
 
