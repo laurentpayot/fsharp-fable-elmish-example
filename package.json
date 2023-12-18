@@ -30,7 +30,7 @@
     "restore": "dotnet tool restore && dotnet restore fsharp-fable-elmish-example.sln",
     "postinstall": "pnpm restore && rm -rf obj/",
     "test": "dotnet test tests.fsproj",
-    "cleanup": "rm -rf output/src",
+    "cleanup": "rm -rf output",
     "start": "dotnet fable watch app.fsproj --outDir output --sourceMaps --run pnpm vite",
     "build": "dotnet fable app.fsproj --outDir output --run pnpm vite build",
     "size:brotli": "echo \"JS size: `brotli -Zcn dist/assets/index-*.js | wc -c | numfmt --to=iec` brotli compressed\"",
