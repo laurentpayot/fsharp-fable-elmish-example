@@ -5,6 +5,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>App</RootNamespace>
     <IsTestProject>false</IsTestProject>
+    <!-- needed for Vite to detect index.html and index.js changes in development mode -->
+    <CreateHardLinksForAdditionalFilesIfPossible>true</CreateHardLinksForAdditionalFilesIfPossible>
   </PropertyGroup>
   <ItemGroup>
     <!-- order is important -->
