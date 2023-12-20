@@ -36,11 +36,6 @@ If you want to leverage Nix flakes and direnv to automatically setup the project
 - `pnpm start` to start the Vite development server with automatic refresh on http://localhost:5000.
 - `pnpm build` to build the bundle, then `pnpm serve` to serve it as a single page application on http://localhost:5000.
 
-## To do
-
-- See if [Million v3](https://million.dev/blog/million-3) is better than Preact
-- Composable form example
-
 ## License
 
 [MIT](https://github.com/laurentpayot/fsharp-fable-elmish-example/blob/main/LICENSE)
