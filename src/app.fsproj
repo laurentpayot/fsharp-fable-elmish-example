@@ -10,13 +10,13 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- order is important -->
-    <Compile Include="src/FFI/**/*.fs" />
-    <Compile Include="src/Shared/**/*.fs" />
-    <Compile Include="src/Pages/**/*.fs" />
-    <Compile Include="src/Main.fs" />
+    <Compile Include="FFI/**/*.fs" />
+    <Compile Include="Shared/**/*.fs" />
+    <Compile Include="Pages/**/*.fs" />
+    <Compile Include="Main.fs" />
     <!-- TargetPath are relative to output/bin/Debug/net8.0/ -->
-    <Content Include="src/index.html" CopyToOutputDirectory="Always" TargetPath="../../../src/index.html" />
-    <Content Include="src/index.js" CopyToOutputDirectory="Always" TargetPath="../../../src/index.js" />
+    <Content Include="index.html" CopyToOutputDirectory="Always" TargetPath="../../../index.html" />
+    <Content Include="index.js" CopyToOutputDirectory="Always" TargetPath="../../../index.js" />
   </ItemGroup>
-  <Import Project=".paket\Paket.Restore.targets" />
+  <Import Project="../.paket/Paket.Restore.targets" />
 </Project>

@@ -8,10 +8,10 @@
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="tests/**/*.fs" />
+    <Compile Include="./**/*.fs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="app.fsproj" />
+    <ProjectReference Include="../src/app.fsproj" />
   </ItemGroup>
-  <Import Project=".paket\Paket.Restore.targets" />
+  <Import Project="../.paket/Paket.Restore.targets" />
 </Project>

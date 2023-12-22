@@ -3,14 +3,14 @@ import preact from "@preact/preset-vite"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    root: './output/src', // all other paths are relative to this directory
+    root: './output', // all other paths are relative to this directory
     server: {
         port: 5000,
         strictPort: true,
     },
-    publicDir: '../../public',
+    publicDir: '../public',
     build: {
-        outDir: '../../dist',
+        outDir: '../dist',
         emptyOutDir: true,
         target: 'es2022', // ES2022 allowed for terser v5.16+ https://github.com/vitejs/vite/pull/12197
         minify: 'terser',
