@@ -28,6 +28,7 @@
   "type": "module",
   "scripts": {
     "restore": "dotnet tool restore && dotnet restore fsharp-fable-elmish-example.sln",
+    "preinstall": "npx only-allow pnpm",
     "postinstall": "pnpm restore && rm -rf obj/",
     "watchers-fix": "sudo sysctl fs.inotify.max_user_watches=131070 && sudo sysctl -p",
     "test": "dotnet test tests.fsproj",
