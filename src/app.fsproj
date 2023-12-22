@@ -15,8 +15,8 @@
     <Compile Include="Pages/**/*.fs" />
     <Compile Include="Main.fs" />
     <!-- TargetPath are relative to output/bin/Debug/net8.0/ -->
-    <Content Include="index.html" CopyToOutputDirectory="Always" TargetPath="../../../index.html" />
-    <Content Include="index.js" CopyToOutputDirectory="Always" TargetPath="../../../index.js" />
+    <Content Include="index.html" Condition="'$(TESTING)' != '1'" CopyToOutputDirectory="Always" TargetPath="../../../index.html" />
+    <Content Include="index.js" Condition="'$(TESTING)' != '1'" CopyToOutputDirectory="Always" TargetPath="../../../index.js" />
   </ItemGroup>
   <Import Project="../.paket/Paket.Restore.targets" />
 </Project>
