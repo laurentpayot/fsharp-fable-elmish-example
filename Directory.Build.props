@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
  <PropertyGroup>
-   <BaseIntermediateOutputPath>../output/_obj</BaseIntermediateOutputPath>
-   <BaseOutputPath>../output/_bin</BaseOutputPath>
+   <BaseIntermediateOutputPath>../output/obj</BaseIntermediateOutputPath>
+   <BaseOutputPath>../output/bin</BaseOutputPath>
  </PropertyGroup>
 </Project>
