@@ -32,6 +32,7 @@
     "postinstall": "pnpm restore && rm -rf obj/",
     "watchers-fix": "sudo sysctl fs.inotify.max_user_watches=131070 && sudo sysctl -p",
     "test": "TESTING=1 dotnet test tests/tests.fsproj",
+    "test:watch": "TESTING=1 dotnet watch --project tests/tests.fsproj test",
     "cleanup": "rm -rf output",
     "start": "pnpm cleanup && dotnet fable watch --cwd src --outDir ../output --sourceMaps --run pnpm vite",
     "build": "pnpm cleanup && dotnet fable --cwd src --outDir ../output --run pnpm vite build",
