@@ -35,6 +35,8 @@ If you want to leverage Nix flakes and direnv to automatically setup the project
 - `pnpm i` to install Node.js dependencies as well as F# dependencies.
 - `pnpm start` to start the Vite development server with automatic refresh on http://localhost:5000.
 - `pnpm build` to build the bundle, then `pnpm serve` to serve it as a single page application on http://localhost:5000.
+- `pnpm test` to run unit tests.
+- `pnpm test:watch` to run unit tests in watch mode: not working yet  because of `dotnet watch test` [issue](https://github.com/dotnet/sdk/issues/34949) (waiting for fix in dotnet 8.0.2xx release).
 
 If you get an error like `ENOSPC: System limit for number of file watchers reached`, run `pnpm watchers-fix` to increase the number of watchers on your system. If you want this increase to be permanent, see [this answer on StackOverflow](https://stackoverflow.com/a/55543310/2675387).
 
