@@ -20,5 +20,5 @@
     <Content Include="index.html" CopyToOutputDirectory="Always" TargetPath="../../../index.html" />
     <Content Include="index.js" CopyToOutputDirectory="Always" TargetPath="../../../index.js" />
   </ItemGroup>
-  <Import Project="../.paket/Paket.Restore.targets" />
+  <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
