@@ -41,7 +41,7 @@
     "do-update": "pnpm update --latest && dotnet paket update"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.7.0",
+    "@preact/preset-vite": "^2.8.1",
     "remotedev": "^0.2.9",
     "terser": "^5.26.0",
     "vite": "^5.0.10"
