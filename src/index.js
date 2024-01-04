@@ -1,3 +1,4 @@
+// @ts-ignore
 import { startApp } from "./Main.js"
 
 if (import.meta.env.PROD) {
