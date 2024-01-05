@@ -13,7 +13,7 @@ open Route
 importSideEffects "./index.css"
 
 
-type PageModel =
+type Page =
     | Counter of Pages.Counter.Model
     | Time of Pages.Time.Model
     | NotFound
@@ -22,7 +22,7 @@ type Msg =
     | CounterMsg of Pages.Counter.Msg
     | TimeMsg of Pages.Time.Msg
 
-type Model = { pageModel: PageModel }
+type Model = { page: Page }
 
 type Flags = { count: int }
 
@@ -30,52 +30,40 @@ type Flags = { count: int }
 let urlUpdate (routeOpt: Route option) (model: Model) : Model * Msg Cmd =
     match routeOpt with
     | Some(Home) ->
-        let pageModel, cmd = Pages.Counter.init 42
+        let pageModel, pageCmd = Pages.Counter.init 42
 
-        {
-            model with
-                pageModel = Counter pageModel
-        },
-        Cmd.map CounterMsg cmd
+        { model with page = Counter pageModel }, Cmd.map CounterMsg pageCmd
 
 
     | Some(Route.Counter count) ->
-        let pageModel, cmd = Pages.Counter.init count
+        let pageModel, pageCmd = Pages.Counter.init count
 
-        {
-            model with
-                pageModel = Counter pageModel
-        },
-        Cmd.map CounterMsg cmd
+        { model with page = Counter pageModel }, Cmd.map CounterMsg pageCmd
 
     | Some(Route.Time) ->
-        let pageModel, cmd = Pages.Time.init ()
+        let pageModel, pageCmd = Pages.Time.init ()
 
-        {
-            model with
-                pageModel = Time pageModel
-        },
-        Cmd.map TimeMsg cmd
+        { model with page = Time pageModel }, Cmd.map TimeMsg pageCmd
 
     // no matching route
-    | None -> { model with pageModel = NotFound }, Cmd.none
+    | None -> { model with page = NotFound }, Cmd.none
 
 
 let init (flags: Flags) (routeOpt: Route option) : Model * Msg Cmd =
     let pageModel, _ = Pages.Counter.init flags.count
 
-    urlUpdate routeOpt { pageModel = Counter pageModel }
+    urlUpdate routeOpt { page = Counter pageModel }
 
 
 let update (msg: Msg) (model: Model) : Model * Msg Cmd =
-    match msg, model.pageModel with
+    match msg, model.page with
 
     | CounterMsg pageMsg, Counter pageModel ->
         let newPageModel, newPageCmd = Pages.Counter.update pageMsg pageModel
 
         {
             model with
-                pageModel = Counter newPageModel
+                page = Counter newPageModel
         },
         Cmd.map CounterMsg newPageCmd
 
@@ -83,24 +71,20 @@ let update (msg: Msg) (model: Model) : Model * Msg Cmd =
     | TimeMsg pageMsg, Time pageModel ->
         let newPageModel, newPageCmd = Pages.Time.update pageMsg pageModel
 
-        {
-            model with
-                pageModel = Time newPageModel
-        },
-        Cmd.map TimeMsg newPageCmd
+        { model with page = Time newPageModel }, Cmd.map TimeMsg newPageCmd
 
     | _ -> model, Cmd.none
 
 
 let subscriptions (model: Model) : Msg Sub =
     Sub.batch [
-        match model.pageModel with
+        match model.page with
         | Time pageModel -> Sub.map "time" TimeMsg <| Pages.Time.subscriptions pageModel
         | _ -> Sub.none
     ]
 
 let pageView (model: Model) (dispatch: Msg Dispatch) : ReactElement list =
-    match model.pageModel with
+    match model.page with
     | Counter pageModel -> Pages.Counter.view pageModel (CounterMsg >> dispatch)
     | Time pageModel -> Pages.Time.view pageModel (TimeMsg >> dispatch)
     | NotFound -> Pages.NotFound.view
