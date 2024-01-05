@@ -98,6 +98,11 @@ let subscriptions (model: Model) : Msg Sub =
         | _ -> Sub.none
     ]
 
+let pageView (model: Model) (dispatch: Msg Dispatch) : ReactElement list =
+    match model.pageModel with
+    | Counter pageModel -> Pages.Counter.view pageModel (CounterMsg >> dispatch)
+    | Time pageModel -> Pages.Time.view pageModel (TimeMsg >> dispatch)
+
 let view (model: Model) (dispatch: Msg Dispatch) : ReactElement =
     div [] [
         header [] [
@@ -112,10 +117,7 @@ let view (model: Model) (dispatch: Msg Dispatch) : ReactElement =
             ]
             hr []
         ]
-        main []
-        <| match model.pageModel with
-           | Counter pageModel -> Pages.Counter.view pageModel (CounterMsg >> dispatch)
-           | Time pageModel -> Pages.Time.view pageModel (TimeMsg >> dispatch)
+        main [] <| pageView model dispatch
     ]
 
 // startApp() is exported from the Main module
