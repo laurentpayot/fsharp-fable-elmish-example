@@ -16,6 +16,7 @@ importSideEffects "./index.css"
 type PageModel =
     | Counter of Pages.Counter.Model
     | Time of Pages.Time.Model
+    | NotFound
 
 type Msg =
     | CounterMsg of Pages.Counter.Msg
@@ -57,7 +58,7 @@ let urlUpdate (routeOpt: Route option) (model: Model) : Model * Msg Cmd =
         Cmd.map TimeMsg cmd
 
     // no matching route
-    | None -> model, Navigation.newUrl "/"
+    | None -> { model with pageModel = NotFound }, Cmd.none
 
 
 let init (flags: Flags) (routeOpt: Route option) : Model * Msg Cmd =
@@ -102,6 +103,7 @@ let pageView (model: Model) (dispatch: Msg Dispatch) : ReactElement list =
     match model.pageModel with
     | Counter pageModel -> Pages.Counter.view pageModel (CounterMsg >> dispatch)
     | Time pageModel -> Pages.Time.view pageModel (TimeMsg >> dispatch)
+    | NotFound -> Pages.NotFound.view
 
 let view (model: Model) (dispatch: Msg Dispatch) : ReactElement =
     div [] [
