@@ -34,7 +34,7 @@
     "test": "TESTING=1 dotnet test tests/tests.fsproj",
     "test:watch": "TESTING=1 dotnet watch --project tests/tests.fsproj test",
     "cleanup": "rm -rf output",
-    "start": "dotnet fable watch --cwd src --outDir ../output --sourceMaps --run pnpm vite",
+    "start": "dotnet fable watch --noCache --cwd src --outDir ../output --sourceMaps --run pnpm vite",
     "build": "dotnet fable --cwd src --outDir ../output --run pnpm vite build",
     "size:brotli": "echo \"JS size: `brotli -Zcn dist/assets/index-*.js | wc -c | numfmt --to=iec` brotli compressed\"",
     "serve": "vite preview --port 5000",
