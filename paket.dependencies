@@ -2,7 +2,7 @@ source https://api.nuget.org/v3/index.json
 storage: none
 
 // app
-nuget Fable.Core // waiting for https://github.com/fable-compiler/Fable/issues/3614
+nuget Fable.Core
 nuget Fable.Browser.Dom
 nuget Fable.Elmish
 nuget Fable.Elmish.Browser
