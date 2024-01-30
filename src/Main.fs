@@ -5,8 +5,6 @@ open Fable.React
 open Elmish
 open Elmish.React
 open Elmish.Navigation
-open Elmish.Debug
-open Elmish.HMR // must be after all the other Elmish imports
 
 open Route
 
@@ -105,6 +103,12 @@ let view (model: Model) (dispatch: Msg Dispatch) : ReactElement =
         ]
         main [] <| pageView model dispatch
     ]
+
+
+#if DEBUG
+open Elmish.Debug
+open Elmish.HMR // must be after all the other Elmish imports
+#endif
 
 // startApp() is exported from the Main module
 let startApp (flags: Flags) =
