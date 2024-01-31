@@ -39,5 +39,6 @@ export default defineConfig({
         react(),
     ],
     //! Elmish Debugger remotedev dependency fix
-    define: {"global": "globalThis"}
+    define: {"global": "globalThis"},
+    clearScreen: false,
 })
