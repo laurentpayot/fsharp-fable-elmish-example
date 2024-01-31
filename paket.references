@@ -6,6 +6,7 @@ Fable.Elmish.Debugger
 Fable.Elmish.React
 Fable.React
 Thoth.Json
+
 Fable.Elmish.HMR
 
 Microsoft.NET.Test.Sdk
