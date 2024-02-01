@@ -90,7 +90,7 @@ let pageView (model: Model) (dispatch: Msg Dispatch) : ReactElement list =
 let view (model: Model) (dispatch: Msg Dispatch) : ReactElement =
     div [] [
         header [] [
-            h1 [] [ str "F# Fable Elmish" ]
+            h1 [] [ str "F# Fable Elmish!!" ]
             nav [] [
                 ul [] [
                     li [] [ linkTo Home [] [ str "Home" ] ]

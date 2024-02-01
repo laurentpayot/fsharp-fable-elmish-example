@@ -13,9 +13,6 @@ export default defineConfig({
                 "obj",
             ],
         },
-        hmr: {
-            overlay: false,
-        }
     },
     publicDir: '../public',
     build: {
