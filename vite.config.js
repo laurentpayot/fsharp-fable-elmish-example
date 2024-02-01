@@ -7,6 +7,12 @@ export default defineConfig({
     server: {
         port: 5000,
         strictPort: true,
+        watch: {
+            ignored: [
+                "bin",
+                "obj",
+            ],
+        },
     },
     publicDir: '../public',
     build: {
