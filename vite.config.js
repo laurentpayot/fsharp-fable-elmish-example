@@ -5,8 +5,8 @@ import { defineConfig } from 'vite'
 import fable from "vite-plugin-fable"
 import preact from "@preact/preset-vite"
 
-const currentDir = path.dirname(fileURLToPath(import.meta.url));
-const fsproj = path.join(currentDir, "src/app.fsproj");
+const currentDir = path.dirname(fileURLToPath(import.meta.url))
+const fsproj = path.join(currentDir, "src/app.fsproj")
 
 
 // https://vitejs.dev/config/
