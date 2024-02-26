@@ -1,10 +1,9 @@
+import path from "node:path"
+import { fileURLToPath } from "node:url"
+
 import { defineConfig } from 'vite'
 import fable from "vite-plugin-fable"
 import preact from "@preact/preset-vite"
-
-
-import path from "node:path"
-import { fileURLToPath } from "node:url"
 
 const currentDir = path.dirname(fileURLToPath(import.meta.url));
 const fsproj = path.join(currentDir, "src/app.fsproj");
@@ -55,7 +54,7 @@ export default defineConfig({
     },
     plugins: [
         fable({ fsproj }),
-        preact({ prefreshEnabled: false, include: /\.(fs|js|jsx|ts|tsx)$/ } ),
+        preact({ prefreshEnabled: false }),
     ],
     //! Elmish Debugger remotedev dependency fix
     define: {"global": "globalThis"}
