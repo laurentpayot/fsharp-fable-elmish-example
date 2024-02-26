@@ -39,7 +39,9 @@
     "build": "vite build",
     "size:brotli": "echo \"JS size: `brotli -Zcn dist/assets/index-*.js | wc -c | numfmt --to=iec` brotli compressed\"",
     "serve": "vite preview --port 5000",
-    "do-update": "pnpm update --latest && dotnet paket update"
+    "update:fs": "dotnet tool update fantomas && dotnet tool update paket && dotnet tool update fable && dotnet paket update",
+    "update:js": "pnpm update --latest",
+    "update:all": "pnpm update:fs && pnpm update:js"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.8.1",
