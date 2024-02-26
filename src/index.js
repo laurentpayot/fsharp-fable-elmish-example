@@ -1,5 +1,5 @@
 // @ts-ignore
-import { startApp } from "./Main.js"
+import { startApp } from "./Main.fs"
 
 if (import.meta.env.PROD) {
     startApp({ count: 43 })

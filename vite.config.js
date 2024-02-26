@@ -12,7 +12,7 @@ const fsproj = path.join(currentDir, "src/app.fsproj");
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    root: './output', // all other paths are relative to this directory
+    root: './src', // all other paths are relative to this directory
     server: {
         port: 5000,
         strictPort: true,
@@ -55,7 +55,7 @@ export default defineConfig({
     },
     plugins: [
         fable({ fsproj }),
-        preact({ prefreshEnabled: false }),
+        preact({ prefreshEnabled: false, include: /\.(fs|js|jsx|ts|tsx)$/ } ),
     ],
     //! Elmish Debugger remotedev dependency fix
     define: {"global": "globalThis"}
