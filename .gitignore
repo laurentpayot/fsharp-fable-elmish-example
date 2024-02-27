@@ -5,7 +5,6 @@ obj/
 
 # Paket dependency manager
 paket-files/
-.paket/
 
 # Node package manager
 node_modules/
