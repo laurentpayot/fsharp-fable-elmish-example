@@ -48,7 +48,7 @@
     "remotedev": "^0.2.9",
     "terser": "^5.28.1",
     "vite": "^5.1.4",
-    "vite-plugin-fable": "^0.0.19"
+    "vite-plugin-fable": "^0.0.21"
   },
   "dependencies": {
     "preact": "^10.19.6"
