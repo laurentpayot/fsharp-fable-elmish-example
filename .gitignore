@@ -5,6 +5,7 @@ obj/
 
 # Paket dependency manager
 paket-files/
+.paket/
 
 # Node package manager
 node_modules/
@@ -12,3 +13,6 @@ node_modules/
 # Vite
 output/
 dist/
+
+# vite-plugin-fable
+fable_modules/
