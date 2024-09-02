@@ -3,11 +3,10 @@ Fable.Browser.Dom
 Fable.Elmish
 Fable.Elmish.Browser
 Fable.Elmish.Debugger
-Fable.Elmish.React
 Fable.Elmish.HMR
-Fable.React
 Thoth.Json
-
+Feliz
+FSharpPlus
 
 Microsoft.NET.Test.Sdk
 xunit
