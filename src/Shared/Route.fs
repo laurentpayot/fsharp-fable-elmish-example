@@ -1,10 +1,6 @@
 module Route
 
-open Fable.React
-open Fable.React.Props
-open Browser.Types
 open Elmish.UrlParser
-open Elmish.Navigation
 
 
 type Route =
@@ -21,13 +17,3 @@ let toString (route: Route) : string =
     | Home -> "/"
     | Counter count -> $"/counter/{count}"
     | Time -> "/time"
-
-let linkTo (route: Route) (props: IHTMLProp list) (children: ReactElement list) : ReactElement =
-    let href = toString route
-
-    let onClick =
-        OnClick(fun (e: MouseEvent) ->
-            e.preventDefault ()
-            Navigation.newUrl href |> List.map (fun f -> f ignore) |> ignore)
-
-    a (Href href :: onClick :: props) children
