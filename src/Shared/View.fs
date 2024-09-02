@@ -1,4 +1,4 @@
-module Helpers.View
+module View
 
 open Elmish.Navigation
 open Browser.Types

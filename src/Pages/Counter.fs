@@ -1,9 +1,10 @@
 ﻿module Pages.Counter
 
-open Fable.React
-open Fable.React.Props
 open Elmish
+open Feliz
+open type Html
 
+open View
 open Remote
 
 
@@ -47,15 +48,18 @@ let update (msg: Msg) (model: Model) =
             GotCat
             GotCatError
     | GotCat base64 -> { model with cat = Loaded base64 }, Cmd.none
-    | GotCatError err -> { model with cat = Error err }, Cmd.none
+    | GotCatError err -> { model with cat = LoadError err }, Cmd.none
 
 
 let subscriptions (model: Model) : Msg Sub = []
 
 
 let view (model: Model) (dispatch: Msg Dispatch) : ReactElement list = [
-    h2 [] [ str "Counter" ]
-    p [] [
+    h2 "Counter"
+    p [
+
+        // TODO: covert to Feliz below!!!!!!!!!!!!!!
+
         button [ OnClick(fun _ -> dispatch Decrement) ] [ str "-" ]
         str (sprintf "%A" model.count)
         button [ OnClick(fun _ -> dispatch Increment) ] [ str "+" ]
