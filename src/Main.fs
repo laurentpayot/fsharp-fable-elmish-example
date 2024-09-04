@@ -116,7 +116,7 @@ let startApp (flags: Flags) =
     Program.mkProgram (init flags) update (lazyView2 view)
     |> Program.withSubscription subscriptions
     |> Program.toNavigable parser urlUpdate
-    |> Program.withReactBatched "root"
+    |> Program.withReactSynchronous "root"
 #if DEBUG
     |> Program.withDebugger
 #endif
