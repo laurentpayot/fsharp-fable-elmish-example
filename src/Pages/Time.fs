@@ -1,10 +1,11 @@
 ﻿module Pages.Time
 
-open Fable.React
-open Fable.React.Props
 open Elmish
 open Thoth.Json
+open Feliz
+open type Html
 
+open View
 open OnEvent
 
 
@@ -44,10 +45,14 @@ let view (model: Model) (dispatch: Msg Dispatch) : ReactElement list =
         | time :: _ -> time
 
     [
-        h2 [] [ str "Time" ]
-        p [] [ strong [] [ str lastTime ] ]
-        p [] [
-            ul [ ClassName "times" ] [ for time in model.times -> li [ Key time ] [ str time ] ]
+        h2 "Time"
+        p [ strong lastTime ]
+        p [
+            ul [
+                P.className "times"
+                __ [ for time in model.times -> li [ P.key time; __' time ] ]
+
+            ]
         ]
     ]
 
