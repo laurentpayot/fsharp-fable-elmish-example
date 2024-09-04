@@ -113,7 +113,7 @@ open Elmish.HMR // must be after all the other Elmish imports
 
 // startApp() is exported from the Main module
 let startApp (flags: Flags) =
-    Program.mkProgram (init flags) update (lazyView2 view)
+    Program.mkProgram (init flags) update view
     |> Program.withSubscription subscriptions
     |> Program.toNavigable parser urlUpdate
     |> Program.withReactSynchronous "root"
