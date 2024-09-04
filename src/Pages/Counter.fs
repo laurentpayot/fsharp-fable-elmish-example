@@ -57,15 +57,15 @@ let subscriptions (model: Model) : Msg Sub = []
 let view (model: Model) (dispatch: Msg Dispatch) : ReactElement list = [
     h2 "Counter"
     p [
-        button [ P.onClick (fun _ -> dispatch Decrement); __' "-" ]
+        button [ P.onClick (fun _ -> dispatch Decrement); P.text "-" ]
         text model.count
-        button [ P.onClick (fun _ -> dispatch Increment); __' "+" ]
+        button [ P.onClick (fun _ -> dispatch Increment); P.text "+" ]
     ]
     p [
-        button [ P.onClick (fun _ -> dispatch Double); __' "Double" ]
-        button [ P.onClick (fun _ -> dispatch Randomize); __' "Random" ]
+        button [ P.onClick (fun _ -> dispatch Double); P.text "Double" ]
+        button [ P.onClick (fun _ -> dispatch Randomize); P.text "Random" ]
     ]
-    p [ button [ P.onClick (fun _ -> dispatch GetCat); __' "Cat" ] ]
+    p [ button [ P.onClick (fun _ -> dispatch GetCat); P.text "Cat" ] ]
     match model.cat with
     | NotAsked -> p "No cat yet"
     | Loading -> p "Loading…"

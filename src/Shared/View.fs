@@ -10,8 +10,6 @@ open Route
 
 type P = prop
 type S = style
-let __: seq<Fable.React.ReactElement> -> IReactProperty = prop.children
-let __': string -> IReactProperty = prop.text
 
 let linkTo (route: Route) (linkProps: IReactProperty list) : ReactElement =
     let url = Route.toString route

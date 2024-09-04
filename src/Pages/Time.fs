@@ -50,7 +50,7 @@ let view (model: Model) (dispatch: Msg Dispatch) : ReactElement list =
         p [
             ul [
                 P.className "times"
-                __ [ for time in model.times -> li [ P.key time; __' time ] ]
+                P.children [ for time in model.times -> li [ P.key time; P.text time ] ]
 
             ]
         ]

@@ -94,10 +94,10 @@ let view (model: Model) (dispatch: Msg Dispatch) : ReactElement =
             h1 "F# Fable Elmish"
             nav [
                 ul [
-                    li [ linkTo Home [ __' "Home" ] ]
-                    li [ linkTo (Route.Counter 0) [ __' "Counter starting at 0" ] ]
-                    li [ linkTo (Route.Counter 50) [ __' "Counter starting at 50" ] ]
-                    li [ linkTo Route.Time [ __' "Time" ] ]
+                    li [ linkTo Home [ P.text "Home" ] ]
+                    li [ linkTo (Route.Counter 0) [ P.text "Counter starting at 0" ] ]
+                    li [ linkTo (Route.Counter 50) [ P.text "Counter starting at 50" ] ]
+                    li [ linkTo Route.Time [ P.text "Time" ] ]
                 ]
             ]
             hr []
