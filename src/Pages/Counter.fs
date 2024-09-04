@@ -57,27 +57,24 @@ let subscriptions (model: Model) : Msg Sub = []
 let view (model: Model) (dispatch: Msg Dispatch) : ReactElement list = [
     h2 "Counter"
     p [
-
-        // TODO: covert to Feliz below!!!!!!!!!!!!!!
-
-        button [ OnClick(fun _ -> dispatch Decrement) ] [ str "-" ]
-        str (sprintf "%A" model.count)
-        button [ OnClick(fun _ -> dispatch Increment) ] [ str "+" ]
+        button [ P.onClick (fun _ -> dispatch Decrement); __' "-" ]
+        text model.count
+        button [ P.onClick (fun _ -> dispatch Increment); __' "+" ]
     ]
-    p [] [
-        button [ OnClick(fun _ -> dispatch Double) ] [ str "Double" ]
-        button [ OnClick(fun _ -> dispatch Randomize) ] [ str "Random" ]
+    p [
+        button [ P.onClick (fun _ -> dispatch Double); __' "Double" ]
+        button [ P.onClick (fun _ -> dispatch Randomize); __' "Random" ]
     ]
-    p [] [ button [ OnClick(fun _ -> dispatch GetCat) ] [ str "Cat" ] ]
+    p [ button [ P.onClick (fun _ -> dispatch GetCat); __' "Cat" ] ]
     match model.cat with
-    | NotAsked -> p [] [ str "No cat yet" ]
-    | Loading -> p [] [ str "Loading…" ]
+    | NotAsked -> p "No cat yet"
+    | Loading -> p "Loading…"
     | Loaded base64 ->
-        p [] [
+        p [
             img [
-                Src("data:image/png;base64," + base64)
-                Style [ Height "200px"; Width "200px" ]
+                P.src ("data:image/png;base64," + base64)
+                P.style [ S.height (length.px 200); S.width (length.px 200) ]
             ]
         ]
-    | Error err -> p [] [ str err.Message ]
+    | LoadError err -> p err.Message
 ]
