@@ -1,11 +1,12 @@
 ﻿module Main
 
 open Fable.Core.JsInterop
-open Fable.React
 open Elmish
-open Elmish.React
 open Elmish.Navigation
+open Feliz
+open type Html
 
+open View
 open Route
 
 importSideEffects "./index.css"
@@ -88,20 +89,20 @@ let pageView (model: Model) (dispatch: Msg Dispatch) : ReactElement list =
     | NotFound -> Pages.NotFound.view
 
 let view (model: Model) (dispatch: Msg Dispatch) : ReactElement =
-    div [] [
-        header [] [
-            h1 [] [ str "F# Fable Elmish" ]
-            nav [] [
-                ul [] [
-                    li [] [ linkTo Home [] [ str "Home" ] ]
-                    li [] [ linkTo (Route.Counter 0) [] [ str "Counter starting at 0" ] ]
-                    li [] [ linkTo (Route.Counter 50) [] [ str "Counter starting at 50" ] ]
-                    li [] [ linkTo Route.Time [] [ str "Time" ] ]
+    div [
+        header [
+            h1 "F# Fable Elmish"
+            nav [
+                ul [
+                    li [ linkTo Home [ __' "Home" ] ]
+                    li [ linkTo (Route.Counter 0) [ __' "Counter starting at 0" ] ]
+                    li [ linkTo (Route.Counter 50) [ __' "Counter starting at 50" ] ]
+                    li [ linkTo Route.Time [ __' "Time" ] ]
                 ]
             ]
             hr []
         ]
-        main [] <| pageView model dispatch
+        main (pageView model dispatch)
     ]
 
 
