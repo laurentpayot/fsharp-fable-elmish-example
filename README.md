@@ -1,6 +1,6 @@
 # F# Fable Elmish example
 
-The goal of this example is to show how to get typical [Elm](https://elm-lang.org/) features (see below) in [F#](https://fsharp.org/). It uses [Fable](https://fable.io/) to transpile F# to JavaScript and [Elmish](https://elmish.github.io/elmish/) to get [The Elm Architecture](https://guide.elm-lang.org/architecture/) (TEA), also known as the Model View Update (MVU) pattern.
+The goal of this example is to show how to get typical [Elm](https://elm-lang.org/) features (see below) in [F#](https://fsharp.org/). We use [Fable](https://fable.io/) to transpile F# to JavaScript and [Elmish](https://elmish.github.io/elmish/) to get [The Elm Architecture](https://guide.elm-lang.org/architecture/) (TEA), also known as the Model View Update (MVU) pattern.
 
 For views we use [Feliz](https://zaid-ajaj.github.io/Feliz/) that uses [React](https://react.dev/) under the hood. In this example React is seamlessly replaced by [Preact](https://preactjs.com/) to get performances [similar to Elm](https://krausest.github.io/js-framework-benchmark/2022/table_chrome_102.0.5005.61.html), both in term of speed and bundle size.
 
