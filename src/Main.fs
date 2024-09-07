@@ -89,7 +89,7 @@ let pageView (model: Model) (dispatch: Msg Dispatch) : ReactElement list =
     | NotFound -> Pages.NotFound.view
 
 let view (model: Model) (dispatch: Msg Dispatch) : ReactElement =
-    div [
+    React.strictMode [
         header [
             h1 "F# Fable Elmish"
             nav [
