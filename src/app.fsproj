@@ -10,9 +10,17 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- order is important -->
-    <Compile Include="FFI/**/*.fs" />
-    <Compile Include="Shared/**/*.fs" />
-    <Compile Include="Pages/**/*.fs" />
+    <Compile Include="FFI/MyJsLib.fs" />
+
+    <Compile Include="Shared/OnEvent.fs" />
+    <Compile Include="Shared/Remote.fs" />
+    <Compile Include="Shared/Route.fs" />
+    <Compile Include="Shared/View.fs" />
+
+    <Compile Include="Pages/Counter.fs" />
+    <Compile Include="Pages/Time.fs" />
+    <Compile Include="Pages/NotFound.fs" />
+
     <Compile Include="Main.fs" />
   </ItemGroup>
   <ItemGroup Condition="'$(TESTING)' != '1'">
