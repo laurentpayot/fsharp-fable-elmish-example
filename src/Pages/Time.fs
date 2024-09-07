@@ -47,12 +47,9 @@ let view (model: Model) (dispatch: Msg Dispatch) : ReactElement list =
     [
         h2 "Time"
         p [ strong lastTime ]
-        p [
-            ul [
-                P.className "times"
-                P.children [ for time in model.times -> li [ P.key time; P.text time ] ]
-
-            ]
+        ul [
+            P.className "times"
+            P.children [ for time in model.times -> li [ P.key time; P.text time ] ]
         ]
     ]
 
