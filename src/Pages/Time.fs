@@ -1,7 +1,8 @@
 ﻿module Pages.Time
 
 open Elmish
-open Thoth.Json
+open Thoth.Json.JavaScript
+open Thoth.Json.Core
 open Feliz
 open type Html
 

@@ -8,9 +8,9 @@ nuget Fable.Elmish
 nuget Fable.Elmish.Browser
 nuget Fable.Elmish.Debugger
 nuget Fable.Elmish.HMR
+nuget Thoth.Json.JavaScript
 nuget Feliz
 nuget FSharpPlus
-nuget Thoth.Json
 
 // tests
 nuget Microsoft.NET.Test.Sdk

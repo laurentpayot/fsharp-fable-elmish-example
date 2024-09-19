@@ -45,6 +45,7 @@ NUGET
       FSharp.Core (>= 4.7.2) - restriction: >= netstandard2.0
     Fable.Elmish.UrlParser (1.0.2) - restriction: >= netstandard2.0
       FSharp.Core (>= 4.7.2) - restriction: >= netstandard2.0
+    Fable.Package.SDK (1.0) - restriction: >= netstandard2.0
     Fable.React.Types (18.3) - restriction: >= netstandard2.0
       Fable.Browser.Dom (>= 2.4.4) - restriction: >= netstandard2.0
       Fable.Core (>= 3.2.7) - restriction: >= netstandard2.0
@@ -589,9 +590,18 @@ NUGET
       System.Text.Encoding (>= 4.3) - restriction: && (< monoandroid) (< monotouch) (< net45) (>= netstandard1.3) (< win8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
       System.Threading (>= 4.3) - restriction: && (< monoandroid) (< monotouch) (< net45) (>= netstandard1.3) (< win8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
       System.Xml.ReaderWriter (>= 4.3) - restriction: || (&& (< monoandroid) (< monotouch) (< net45) (>= netstandard1.3) (< win8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (&& (< monoandroid) (< net45) (>= netstandard1.0) (< netstandard1.3) (< win8) (< wp8) (< wpa81))
-    Thoth.Json (10.2)
+    Thoth.Json (10.2) - restriction: >= netstandard2.0
       Fable.Core (>= 3.6.2) - restriction: >= netstandard2.0
       FSharp.Core (>= 4.7.2) - restriction: >= netstandard2.0
+    Thoth.Json.Core (0.3) - restriction: >= netstandard2.0
+      Fable.Core (>= 4.1) - restriction: >= netstandard2.0
+      Fable.Package.SDK (>= 0.1) - restriction: >= netstandard2.0
+      FSharp.Core (>= 5.0) - restriction: >= netstandard2.0
+    Thoth.Json.JavaScript (0.2)
+      Fable.Core (>= 4.1) - restriction: >= netstandard2.0
+      Fable.Package.SDK (>= 0.1) - restriction: >= netstandard2.0
+      FSharp.Core (>= 5.0) - restriction: >= netstandard2.0
+      Thoth.Json.Core (>= 0.3) - restriction: >= netstandard2.0
     xunit (2.9)
       xunit.analyzers (>= 1.15)
       xunit.assert (>= 2.9)
